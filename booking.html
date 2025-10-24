@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Booking • Snazzy Paws Grooming</title>
+<link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+<body>
+<header>
+  <h1>Snazzy Paws Grooming</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="booking.html" aria-current="page">Booking</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Booking</h2>
+  <p>Tell us about your dog and the service you want. We’ll confirm by email.</p>
+
+  <form action="#" method="post" novalidate>
+    <fieldset>
+      <legend>Owner details</legend>
+      <p><label for="owner-name">Owner’s name</label><br>
+      <input id="owner-name" name="owner-name" type="text" autocomplete="name" placeholder="e.g., Mary Thompson" required></p>
+
+      <p><label for="owner-email">Email address</label><br>
+      <input id="owner-email" name="owner-email" type="email" autocomplete="email" placeholder="you@example.com" required></p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Dog details</legend>
+      <p><label for="dog-name">Dog’s name</label><br>
+      <input id="dog-name" name="dog-name" type="text" placeholder="e.g., Milo" required></p>
+
+      <p><label for="dog-breed">Breed</label><br>
+      <input id="dog-breed" name="dog-breed" type="text" placeholder="e.g., Golden Retriever" required></p>
+
+      <p><label for="dog-age">Age</label><br>
+      <input id="dog-age" name="dog-age" type="number" min="0" step="0.1" placeholder="e.g., 3.5" required></p>
+    </fieldset>
+
+    <p><button type="submit">Submit booking</button></p>
+  </form>
+</main>
+
+<footer><p>Open Mon–Sat, 9am–5pm</p></footer>
+</body>
+</html>
