@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gallery • Snazzy Paws Grooming</title>
+<link rel="stylesheet" href="assets/css/styles.min.css">
+<style>
+/* Simple 4×4 grid without extra files */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;padding:0 1rem}
+@media(min-width:760px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:#f4f6f8;padding:.5rem;text-align:center;border-radius:.5rem}
+.card img{max-width:100%;height:auto;display:block;margin:0 auto}
+</style>
+</head>
+<body>
+<header>
+  <h1>Snazzy Paws Grooming</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html" aria-current="page">Gallery</a>
+    <a href="booking.html">Booking</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Gallery</h2>
+  <p>Examples of recent grooms (placeholder images).</p>
+
+  <div class="grid">
+    <!-- 16 royalty-free placeholders from picsum.photos -->
+    <!-- Replace later with your own royalty-free images if you like -->
+    <!-- Keep meaningful alt text -->
+    <!-- Row 1 -->
+    <figure class="card"><img src="https://picsum.photos/seed/dog1/600/450" alt="Spa package result"><figcaption>Spa package</figcaption></figure>
+    <figure class="card"><img src="https://picsum.photos/seed/dog2/600/450" alt="Breed cut"><figcaption>Breed cut</figcaption></figure>
+    <figure class="card"><img src="https://picsum.photos/seed/dog3/600/450" alt="Full groom"><figcaption>Full groom</figcaption></figure>
+    <figure class="card"><img src="https://picsum.photos/seed/dog4/600/450" alt="Puppy package"><figcaption>Puppy package</figcaption></figure>
+    <!-- Row 2 -->
+    <figure class="card"><img src="https://picsum.photos/seed/dog5/600/450" alt="Senior groom"><figcaption>Senior groom</figcaption></figure>
+    <figure class="card"><img src="https://picsum.photos/seed/dog6/600/450" alt="Bath and brush"><figcaption>Bath & brush</figcaption></figure>
+    <figure class="card"><img src="https://picsum.photos/seed/dog7/600/450" alt="De-shedding"><figcaption>De-shedding</figcaption></figure>
+    <figure class="card"><img src="https://picsum.photos/seed/dog8/600/450" alt="Express touch-up"><figcaption>Express touch-up</figcaption></figure>
+    <!-- Row 3 -->
+    <figure class="card"><img src="https://picsum.photos/seed/dog9/600/450" alt="Teeth brushing"><figcaption>Teeth brushing</figcaption></figure>
+    <figure class="card"><img src="https://picsum.photos/seed/dog10/600/450" alt="Ear cleaning"><figcaption>Ear cleaning</figcaption></figure>
+    <figure class="card"><img src="https://picsum.photos/seed/dog11/600/450" alt="Nail trim"><figcaption>Nail trim</figcaption></figure>
+    <figure class="card"><img src="https://picsum.photos/seed/dog12/600/450" alt="Medicated bath"><figcaption>Medicated bath</figcaption></figure>
+    <!-- Row 4 -->
+    <figure class="card"><img src="https://picsum.photos/seed/dog13/600/450" alt="Flea & tick treatment"><figcaption>Flea & tick</figcaption></figure>
+    <figure class="card"><img src="https://picsum.photos/seed/dog14/600/450" alt="Special breed cut"><figcaption>Special breed cut</figcaption></figure>
+    <figure class="card"><img src="https://picsum.photos/seed/dog15/600/450" alt="Happy customer dog"><figcaption>Happy customer</figcaption></figure>
+    <figure class="card"><img src="https://picsum.photos/seed/dog16/600/450" alt="Grooming finish"><figcaption>Fresh finish</figcaption></figure>
+  </div>
+</main>
+
+<footer><p>Open Mon–Sat, 9am–5pm</p></footer>
+</body>
+</html>
