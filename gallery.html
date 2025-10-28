@@ -26,35 +26,93 @@
 </header>
 
 <main>
-  <h2>Gallery</h2>
-  <p>Examples of recent grooms (placeholder images).</p>
+  <h2 style="text-align:center;">Gallery</h2>
+  <p style="text-align:center;">A look at our happy, freshly groomed pups!</p>
 
-  <div class="grid">
-    <!-- 16 royalty-free placeholders from picsum.photos -->
-    <!-- Replace later with your own royalty-free images if you like -->
-    <!-- Keep meaningful alt text -->
-    <!-- Row 1 -->
-    <figure class="card"><img src="https://picsum.photos/seed/dog1/600/450" alt="Spa package result"><figcaption>Spa package</figcaption></figure>
-    <figure class="card"><img src="https://picsum.photos/seed/dog2/600/450" alt="Breed cut"><figcaption>Breed cut</figcaption></figure>
-    <figure class="card"><img src="https://picsum.photos/seed/dog3/600/450" alt="Full groom"><figcaption>Full groom</figcaption></figure>
-    <figure class="card"><img src="https://picsum.photos/seed/dog4/600/450" alt="Puppy package"><figcaption>Puppy package</figcaption></figure>
-    <!-- Row 2 -->
-    <figure class="card"><img src="https://picsum.photos/seed/dog5/600/450" alt="Senior groom"><figcaption>Senior groom</figcaption></figure>
-    <figure class="card"><img src="https://picsum.photos/seed/dog6/600/450" alt="Bath and brush"><figcaption>Bath & brush</figcaption></figure>
-    <figure class="card"><img src="https://picsum.photos/seed/dog7/600/450" alt="De-shedding"><figcaption>De-shedding</figcaption></figure>
-    <figure class="card"><img src="https://picsum.photos/seed/dog8/600/450" alt="Express touch-up"><figcaption>Express touch-up</figcaption></figure>
-    <!-- Row 3 -->
-    <figure class="card"><img src="https://picsum.photos/seed/dog9/600/450" alt="Teeth brushing"><figcaption>Teeth brushing</figcaption></figure>
-    <figure class="card"><img src="https://picsum.photos/seed/dog10/600/450" alt="Ear cleaning"><figcaption>Ear cleaning</figcaption></figure>
-    <figure class="card"><img src="https://picsum.photos/seed/dog11/600/450" alt="Nail trim"><figcaption>Nail trim</figcaption></figure>
-    <figure class="card"><img src="https://picsum.photos/seed/dog12/600/450" alt="Medicated bath"><figcaption>Medicated bath</figcaption></figure>
-    <!-- Row 4 -->
-    <figure class="card"><img src="https://picsum.photos/seed/dog13/600/450" alt="Flea & tick treatment"><figcaption>Flea & tick</figcaption></figure>
-    <figure class="card"><img src="https://picsum.photos/seed/dog14/600/450" alt="Special breed cut"><figcaption>Special breed cut</figcaption></figure>
-    <figure class="card"><img src="https://picsum.photos/seed/dog15/600/450" alt="Happy customer dog"><figcaption>Happy customer</figcaption></figure>
-    <figure class="card"><img src="https://picsum.photos/seed/dog16/600/450" alt="Grooming finish"><figcaption>Fresh finish</figcaption></figure>
+  <!-- Responsive 4×4 grid (wraps on small screens) -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;padding:1rem;">
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/nail-trim.jpg" alt="Groomer trimming a small dog’s nails" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
+      <figcaption>Nail Trim</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/haircut-golden.jpg" alt="Groomer styling a golden retriever’s coat" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
+      <figcaption>Gentle Groom</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/dog-bath.jpg" alt="Dog enjoying a bath at the salon" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
+      <figcaption>Bath Time</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/dog-shower.jpg" alt="Dog being rinsed with water" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
+      <figcaption>Rinse &amp; Shine</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/clipping.jpg" alt="Groomer using clippers on a Yorkie" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
+      <figcaption>Coat Trim</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/styled-cut.jpg" alt="Freshly groomed dog posing on the table" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
+      <figcaption>Styled Cut</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/spray-dry.jpg" alt="Groomer spraying coat to finish" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
+      <figcaption>Finishing Touch</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/puppy-trim.jpg" alt="Puppy getting a careful face trim" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
+      <figcaption>Puppy Trim</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/bow-style.jpg" alt="Dog with a pink bow after grooming" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
+      <figcaption>Pretty Pup</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/brushing.jpg" alt="Groomer brushing a spaniel’s fur" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
+      <figcaption>Brushing Session</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/shaved-style.jpg" alt="Chinese Crested with a neat summer trim" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
+      <figcaption>Summer Cut</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/blowdry.jpg" alt="Dog being blow-dried after a wash" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
+      <figcaption>Blow Dry</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/smile-bath.jpg" alt="Bulldog smiling during bath" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
+      <figcaption>Happy Pup</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/pomeranian-comb.jpg" alt="Groomer combing a fluffy white dog" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
+      <figcaption>Combing Time</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/yorkie-closeup.jpg" alt="Yorkie with a freshly trimmed face" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
+      <figcaption>Yorkie Style</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/fancy-bow.jpg" alt="Dog posing proudly with a yellow bow tie" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
+      <figcaption>Bowtie Finish</figcaption>
+    </figure>
   </div>
 </main>
+
 
 <footer><p>Open Mon–Sat, 9am–5pm</p></footer>
 </body>
