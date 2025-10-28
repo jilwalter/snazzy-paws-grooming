@@ -2,9 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Snazzy Paws Grooming • Home</title>
   <link rel="stylesheet" href="assets/css/styles.min.css">
+  <style>
+    /* --- Additions for the new layout (keeps header/nav consistent) --- */
+    .container{max-width:1100px;margin:0 auto;padding:0 1rem}
+    .split{display:grid;gap:1.25rem;align-items:center}
+    @media(min-width:900px){.split{grid-template-columns:1.05fr .95fr}}
+    .feature-img{width:100%;height:auto;border-radius:12px;display:block}
+    .lead{font-size:1.05rem;line-height:1.6}
+    .btn{
+      display:inline-block;background:#14b8a6;color:#fff;text-decoration:none;
+      padding:.7rem 1rem;border-radius:.7rem;font-weight:700
+    }
+    .btn:hover,.btn:focus-visible{background:#0f766e}
+    .link-list{margin:.65rem 0 0 1.15rem;line-height:1.55}
+    .strip{background:#f6f8fa;border-radius:12px;padding:1rem;text-align:center;margin:1.25rem 0}
+    /* Services grid */
+    .services{margin:1.5rem 0}
+    .services-grid{display:grid;gap:1rem}
+    @media(min-width:640px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:900px){.services-grid{grid-template-columns:repeat(3,1fr)}}
+    .card{
+      background:#ffffff;border:1px solid #e7edf2;border-radius:12px;
+      padding:1rem;display:flex;gap:.75rem;align-items:flex-start
+    }
+    .card .emoji{font-size:1.6rem;line-height:1}
+    .card h3{margin:.1rem 0 .35rem;font-size:1.05rem}
+    .card p{margin:0;color:#334}
+  </style>
 </head>
 <body>
 
@@ -20,64 +47,90 @@
     </nav>
   </header>
 
-  <main>
-    <!-- Welcome / intro (unchanged copy so it matches your other pages) -->
-    <section aria-labelledby="welcome-heading">
-      <h2 id="welcome-heading">Welcome</h2>
-      <p>
-        At Snazzy Paws Grooming, we provide gentle, professional grooming for dogs
-        of all breeds and coat types. Our goal is to make every visit a positive,
-        safe, and stress-free experience — so your pet looks and feels their best.
-      </p>
-      <ul>
-        <li><a href="services.html">See our Services and Prices</a></li>
-        <li><a href="gallery.html">Browse our 4×4 image Gallery</a></li>
-        <li><a href="booking.html" class="btn">Book an Appointment</a></li>
-        <li><a href="contact.html">Find our Contact Details</a></li>
-      </ul>
+  <main class="container" id="content">
+    <!-- Split layout: text + portrait on the side -->
+    <section class="split" aria-labelledby="welcome-heading" style="margin:1rem 0 1.75rem;">
+      <!-- Left: text -->
+      <div>
+        <h2 id="welcome-heading">Welcome</h2>
+        <p class="lead">
+          At Snazzy Paws Grooming, we provide gentle, professional grooming for dogs of all
+          breeds and coat types. Our goal is to make every visit a positive, safe, and stress-free
+          experience — so your pet looks and feels their best.
+        </p>
+        <ul class="link-list">
+          <li><a href="services.html">See our Services and Prices</a></li>
+          <li><a href="gallery.html">Browse our 4×4 image Gallery</a></li>
+          <li><a href="contact.html">Find our Contact Details</a></li>
+        </ul>
+        <p style="margin-top:.8rem;"><a class="btn" href="booking.html">Book an Appointment</a></p>
+      </div>
+
+      <!-- Right: full portrait, not cropped -->
+      <div>
+        <img class="feature-img"
+             src="assets/img/longcoat-groom.jpg"
+             alt="Long-coat dog freshly groomed at Snazzy Paws">
+      </div>
     </section>
 
-    <!-- NEW: full portrait shown outside of a hero banner -->
-    <section aria-labelledby="featured-heading" style="margin: 1.25rem 0 1.75rem;">
-      <h2 id="featured-heading">Featured groom</h2>
-      <figure style="max-width: 520px; margin: .5rem auto 0;">
-        <img
-          src="assets/img/longcoat-groom.jpg"
-          alt="Long-coat dog freshly groomed at Snazzy Paws"
-          style="width: 100%; height: auto; display: block; border-radius: 12px;"
-        >
-        <!-- Optional caption. Remove if you don’t want it. -->
-        <figcaption style="text-align:center; font-size:.95rem; opacity:.8; margin-top:.35rem;">
-          A recent long-coat tidy — soft, clean and tangle-free.
-        </figcaption>
-      </figure>
+    <!-- Option 2: Popular services at a glance -->
+    <section class="services" aria-labelledby="services-glance">
+      <h2 id="services-glance">Popular services</h2>
+      <div class="services-grid">
+        <a class="card" href="services.html">
+          <span class="emoji" aria-hidden="true">🛁</span>
+          <div>
+            <h3>Bath &amp; Blow Dry</h3>
+            <p>Warm bath, gentle shampoo and full dry for a soft, clean coat.</p>
+          </div>
+        </a>
+
+        <a class="card" href="services.html">
+          <span class="emoji" aria-hidden="true">✂️</span>
+          <div>
+            <h3>Full Groom</h3>
+            <p>Clip or scissor style to suit the breed and your preferences.</p>
+          </div>
+        </a>
+
+        <a class="card" href="services.html">
+          <span class="emoji" aria-hidden="true">🐾</span>
+          <div>
+            <h3>Nail Trim</h3>
+            <p>Quick, stress-free trims to keep paws healthy and comfy.</p>
+          </div>
+        </a>
+      </div>
     </section>
 
-    <!-- Why choose us (unchanged) -->
+    <!-- Why choose us -->
     <section aria-labelledby="why-heading">
       <h2 id="why-heading">Why choose us</h2>
-      <ul>
+      <ul class="link-list" style="margin-left:1.15rem">
         <li>Qualified groomers experienced with all breeds and coat types.</li>
-        <li>Stress-free care for puppies, seniors, and anxious pets.</li>
+        <li>Stress-free care for puppies, seniors and anxious pets.</li>
         <li>Transparent pricing and friendly service.</li>
       </ul>
     </section>
 
-    <!-- Opening hours strip (unchanged) -->
-    <aside aria-label="Opening hours" style="background:#f6f8fa; border-radius:12px; padding:1rem; text-align:center; margin:1.25rem 0;">
+    <!-- Opening hours -->
+    <aside class="strip" role="note" aria-label="Opening hours">
       <strong>Open Mon–Sat, 9am–5pm</strong> • Hamilton, New Zealand
     </aside>
 
-    <!-- CTA (unchanged) -->
+    <!-- Final CTA -->
     <section aria-labelledby="cta-heading" style="margin:1rem 0 2rem;">
       <h2 id="cta-heading">Ready to book?</h2>
-      <p>Choose a time that suits you. Tell us your dog’s breed and grooming needs, and we’ll confirm your appointment.</p>
+      <p class="lead" style="margin:.25rem 0 .75rem">
+        Choose a time that suits you. Tell us your dog’s breed and grooming needs, and we’ll confirm your appointment.
+      </p>
       <p><a class="btn" href="booking.html">Book Now</a></p>
     </section>
   </main>
 
-  <footer>
-    <p>Open Mon–Sat, 9am–5pm</p>
+  <footer class="container" role="contentinfo" style="margin:2rem 0">
+    <p>© Snazzy Paws Grooming • Hamilton • Open Mon–Sat, 9am–5pm</p>
   </footer>
 </body>
 </html>
