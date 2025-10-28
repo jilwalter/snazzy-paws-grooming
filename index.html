@@ -6,7 +6,7 @@
   <title>Snazzy Paws Grooming • Home</title>
   <link rel="stylesheet" href="assets/css/styles.min.css">
   <style>
-    /* --- Additions for the new layout (keeps header/nav consistent) --- */
+    /* Layout helpers */
     .container{max-width:1100px;margin:0 auto;padding:0 1rem}
     .split{display:grid;gap:1.25rem;align-items:center}
     @media(min-width:900px){.split{grid-template-columns:1.05fr .95fr}}
@@ -19,6 +19,20 @@
     .btn:hover,.btn:focus-visible{background:#0f766e}
     .link-list{margin:.65rem 0 0 1.15rem;line-height:1.55}
     .strip{background:#f6f8fa;border-radius:12px;padding:1rem;text-align:center;margin:1.25rem 0}
+    /* Welcome background section */
+    .welcome-section{
+      background:#f8fafc;
+      border-radius:12px;
+      padding:2rem 1.5rem;
+      box-shadow:0 0 15px rgba(0,0,0,0.05);
+    }
+    .welcome-tagline{
+      font-size:1.1rem;
+      font-style:italic;
+      color:#0f766e;
+      margin-top:-.3rem;
+      margin-bottom:1rem;
+    }
     /* Services grid */
     .services{margin:1.5rem 0}
     .services-grid{display:grid;gap:1rem}
@@ -35,7 +49,7 @@
 </head>
 <body>
 
-  <!-- Header stays exactly like other pages -->
+  <!-- Header stays identical across all pages -->
   <header>
     <h1>Snazzy Paws Grooming</h1>
     <nav>
@@ -48,41 +62,50 @@
   </header>
 
   <main class="container" id="content">
-    <!-- Split layout: text + portrait on the side -->
-    <section class="split" aria-labelledby="welcome-heading" style="margin:1rem 0 1.75rem;">
-      <!-- Left: text -->
-      <div>
+    <!-- Split layout: welcome text + portrait on the side -->
+    <section class="split" aria-labelledby="welcome-heading" style="margin:1.25rem 0 2rem;">
+      <!-- Left: text with background -->
+      <div class="welcome-section">
         <h2 id="welcome-heading">Welcome</h2>
+        <p class="welcome-tagline">Professional, gentle care for every breed — every visit.</p>
+
         <p class="lead">
           At Snazzy Paws Grooming, we provide gentle, professional grooming for dogs of all
           breeds and coat types. Our goal is to make every visit a positive, safe, and stress-free
           experience — so your pet looks and feels their best.
         </p>
+
+        <p>
+          We pride ourselves on providing a calm environment, personalized care, and high-quality
+          grooming tailored to your dog’s coat and comfort. Whether it’s a quick tidy-up or a full groom,
+          every pet leaves our salon looking their very best.
+        </p>
+
         <ul class="link-list">
           <li><a href="services.html">See our Services and Prices</a></li>
-          <li><a href="gallery.html">Browse our 4×4 image Gallery</a></li>
+          <li><a href="gallery.html">Browse our 4×4 Image Gallery</a></li>
           <li><a href="contact.html">Find our Contact Details</a></li>
         </ul>
         <p style="margin-top:.8rem;"><a class="btn" href="booking.html">Book an Appointment</a></p>
       </div>
 
-      <!-- Right: full portrait, not cropped -->
+      <!-- Right: full portrait -->
       <div>
         <img class="feature-img"
              src="assets/img/longcoat-groom.jpg"
-             alt="Long-coat dog freshly groomed at Snazzy Paws">
+             alt="Long-coated dog freshly groomed at Snazzy Paws Grooming salon">
       </div>
     </section>
 
-    <!-- Option 2: Popular services at a glance -->
+    <!-- Popular services section -->
     <section class="services" aria-labelledby="services-glance">
-      <h2 id="services-glance">Popular services</h2>
+      <h2 id="services-glance">Popular Services</h2>
       <div class="services-grid">
         <a class="card" href="services.html">
           <span class="emoji" aria-hidden="true">🛁</span>
           <div>
             <h3>Bath &amp; Blow Dry</h3>
-            <p>Warm bath, gentle shampoo and full dry for a soft, clean coat.</p>
+            <p>Warm bath, gentle shampoo, and a full dry for a soft, clean coat.</p>
           </div>
         </a>
 
@@ -90,7 +113,7 @@
           <span class="emoji" aria-hidden="true">✂️</span>
           <div>
             <h3>Full Groom</h3>
-            <p>Clip or scissor style to suit the breed and your preferences.</p>
+            <p>Clip or scissor style to suit your dog’s breed and lifestyle.</p>
           </div>
         </a>
 
@@ -98,7 +121,7 @@
           <span class="emoji" aria-hidden="true">🐾</span>
           <div>
             <h3>Nail Trim</h3>
-            <p>Quick, stress-free trims to keep paws healthy and comfy.</p>
+            <p>Quick, stress-free trims to keep your dog’s paws healthy and comfortable.</p>
           </div>
         </a>
       </div>
@@ -106,11 +129,11 @@
 
     <!-- Why choose us -->
     <section aria-labelledby="why-heading">
-      <h2 id="why-heading">Why choose us</h2>
+      <h2 id="why-heading">Why Choose Us</h2>
       <ul class="link-list" style="margin-left:1.15rem">
         <li>Qualified groomers experienced with all breeds and coat types.</li>
-        <li>Stress-free care for puppies, seniors and anxious pets.</li>
-        <li>Transparent pricing and friendly service.</li>
+        <li>Stress-free care for puppies, seniors, and anxious pets.</li>
+        <li>Transparent pricing and friendly, professional service.</li>
       </ul>
     </section>
 
@@ -119,9 +142,9 @@
       <strong>Open Mon–Sat, 9am–5pm</strong> • Hamilton, New Zealand
     </aside>
 
-    <!-- Final CTA -->
+    <!-- Final call-to-action -->
     <section aria-labelledby="cta-heading" style="margin:1rem 0 2rem;">
-      <h2 id="cta-heading">Ready to book?</h2>
+      <h2 id="cta-heading">Ready to Book?</h2>
       <p class="lead" style="margin:.25rem 0 .75rem">
         Choose a time that suits you. Tell us your dog’s breed and grooming needs, and we’ll confirm your appointment.
       </p>
@@ -134,4 +157,3 @@
   </footer>
 </body>
 </html>
-
