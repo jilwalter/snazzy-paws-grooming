@@ -5,7 +5,35 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Gallery • Snazzy Paws Grooming</title>
 <link rel="stylesheet" href="assets/css/styles.min.css">
+
+<style>
+/* Force 4 columns on desktop, 2 on mobile */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+figure {
+  background: #f6f8fa;
+  border-radius: 10px;
+  padding: .5rem;
+  text-align: center;
+}
+figure img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+</style>
 </head>
+
 <body>
 <header>
   <h1>Snazzy Paws Grooming</h1>
@@ -22,86 +50,23 @@
   <h2 style="text-align:center;">Gallery</h2>
   <p style="text-align:center;">A look at our happy, freshly groomed pups!</p>
 
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;padding:1rem;">
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/nail-trim.jpg" alt="Groomer trimming a small dog’s nails" style="width:100%;height:200px;object-fit:cover;border-radius:8px;" loading="lazy">
-      <figcaption>Nail Trim</figcaption>
-    </figure>
-
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/haircut-golden.jpg" alt="Groomer styling a golden retriever’s coat" style="width:100%;height:200px;object-fit:cover;border-radius:8px;" loading="lazy">
-      <figcaption>Gentle Groom</figcaption>
-    </figure>
-
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/dog-bath.jpg" alt="Dog enjoying a bath at the salon" style="width:100%;height:200px;object-fit:cover;border-radius:8px;" loading="lazy">
-      <figcaption>Bath Time</figcaption>
-    </figure>
-
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/dog-shower.jpg" alt="Dog being rinsed with water" style="width:100%;height:200px;object-fit:cover;border-radius:8px;" loading="lazy">
-      <figcaption>Rinse &amp; Shine</figcaption>
-    </figure>
-
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/clipping.jpg" alt="Groomer using clippers on a Yorkie" style="width:100%;height:200px;object-fit:cover;border-radius:8px;" loading="lazy">
-      <figcaption>Coat Trim</figcaption>
-    </figure>
-
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/styled-cut.jpg" alt="Freshly groomed dog posing on the table" style="width:100%;height:200px;object-fit:cover;border-radius:8px;" loading="lazy">
-      <figcaption>Styled Cut</figcaption>
-    </figure>
-
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/spray-dry.jpg" alt="Groomer spraying coat to finish" style="width:100%;height:200px;object-fit:cover;border-radius:8px;" loading="lazy">
-      <figcaption>Finishing Touch</figcaption>
-    </figure>
-
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/puppy-trim.jpg" alt="Puppy getting a careful face trim" style="width:100%;height:200px;object-fit:cover;border-radius:8px;" loading="lazy">
-      <figcaption>Puppy Trim</figcaption>
-    </figure>
-
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/bow-style.jpg" alt="Dog with a pink bow after grooming" style="width:100%;height:200px;object-fit:cover;border-radius:8px;" loading="lazy">
-      <figcaption>Pretty Pup</figcaption>
-    </figure>
-
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/brushing.jpg" alt="Groomer brushing a spaniel’s fur" style="width:100%;height:200px;object-fit:cover;border-radius:8px;" loading="lazy">
-      <figcaption>Brushing Session</figcaption>
-    </figure>
-
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/shaved-style.jpg" alt="Chinese Crested with a neat summer trim" style="width:100%;height:200px;object-fit:cover;border-radius:8px;" loading="lazy">
-      <figcaption>Summer Cut</figcaption>
-    </figure>
-
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/blowdry.jpg" alt="Dog being blow-dried after a wash" style="width:100%;height:200px;object-fit:cover;border-radius:8px;" loading="lazy">
-      <figcaption>Blow Dry</figcaption>
-    </figure>
-
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/smile-bath.jpg" alt="Bulldog smiling during bath" style="width:100%;height:200px;object-fit:cover;border-radius:8px;" loading="lazy">
-      <figcaption>Happy Pup</figcaption>
-    </figure>
-
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/pomeranian-comb.jpg" alt="Groomer combing a fluffy white dog" style="width:100%;height:200px;object-fit:cover;border-radius:8px;" loading="lazy">
-      <figcaption>Combing Time</figcaption>
-    </figure>
-
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/yorkie-closeup.jpg" alt="Yorkie with a freshly trimmed face" style="width:100%;height:200px;object-fit:cover;border-radius:8px;" loading="lazy">
-      <figcaption>Yorkie Style</figcaption>
-    </figure>
-
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/fancy-bow.jpg" alt="Dog posing proudly with a yellow bow tie" style="width:100%;height:200px;object-fit:cover;border-radius:8px;" loading="lazy">
-      <figcaption>Bowtie Finish</figcaption>
-    </figure>
+  <div class="gallery-grid">
+    <figure><img src="assets/img/nail-trim.jpg" alt="Groomer trimming a small dog’s nails" loading="lazy"><figcaption>Nail Trim</figcaption></figure>
+    <figure><img src="assets/img/haircut-golden.jpg" alt="Groomer styling a golden retriever’s coat" loading="lazy"><figcaption>Gentle Groom</figcaption></figure>
+    <figure><img src="assets/img/dog-bath.jpg" alt="Dog enjoying a bath at the salon" loading="lazy"><figcaption>Bath Time</figcaption></figure>
+    <figure><img src="assets/img/dog-shower.jpg" alt="Dog being rinsed with water" loading="lazy"><figcaption>Rinse &amp; Shine</figcaption></figure>
+    <figure><img src="assets/img/clipping.jpg" alt="Groomer using clippers on a Yorkie" loading="lazy"><figcaption>Coat Trim</figcaption></figure>
+    <figure><img src="assets/img/styled-cut.jpg" alt="Freshly groomed dog posing on the table" loading="lazy"><figcaption>Styled Cut</figcaption></figure>
+    <figure><img src="assets/img/spray-dry.jpg" alt="Groomer spraying coat to finish" loading="lazy"><figcaption>Finishing Touch</figcaption></figure>
+    <figure><img src="assets/img/puppy-trim.jpg" alt="Puppy getting a careful face trim" loading="lazy"><figcaption>Puppy Trim</figcaption></figure>
+    <figure><img src="assets/img/bow-style.jpg" alt="Dog with a pink bow after grooming" loading="lazy"><figcaption>Pretty Pup</figcaption></figure>
+    <figure><img src="assets/img/brushing.jpg" alt="Groomer brushing a spaniel’s fur" loading="lazy"><figcaption>Brushing Session</figcaption></figure>
+    <figure><img src="assets/img/shaved-style.jpg" alt="Chinese Crested with a neat summer trim" loading="lazy"><figcaption>Summer Cut</figcaption></figure>
+    <figure><img src="assets/img/blowdry.jpg" alt="Dog being blow-dried after a wash" loading="lazy"><figcaption>Blow Dry</figcaption></figure>
+    <figure><img src="assets/img/smile-bath.jpg" alt="Bulldog smiling during bath" loading="lazy"><figcaption>Happy Pup</figcaption></figure>
+    <figure><img src="assets/img/pomeranian-comb.jpg" alt="Groomer combing a fluffy white dog" loading="lazy"><figcaption>Combing Time</figcaption></figure>
+    <figure><img src="assets/img/yorkie-closeup.jpg" alt="Yorkie with a freshly trimmed face" loading="lazy"><figcaption>Yorkie Style</figcaption></figure>
+    <figure><img src="assets/img/fancy-bow.jpg" alt="Dog posing proudly with a yellow bow tie" loading="lazy"><figcaption>Bowtie Finish</figcaption></figure>
   </div>
 </main>
 
