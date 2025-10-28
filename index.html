@@ -6,35 +6,73 @@
   <title>Snazzy Paws Grooming • Home</title>
   <link rel="stylesheet" href="assets/css/styles.min.css">
   <style>
-    /* Simple, assessment-compliant page layout */
+    /* --- Layout helpers --- */
+    :root{
+      --brand:#14b8a6;      /* primary */
+      --brand-700:#0f766e;  /* darker for hover/focus */
+      --ink:#102027;
+      --muted:#334;
+      --panel:#f6f8fa;
+      --ring:#1f8bff;
+    }
+    html{scroll-behavior:smooth}
+    body{color:var(--ink)}
     .container{max-width:1100px;margin:0 auto;padding:0 1rem}
-    .lead{font-size:1.05rem}
-    .grid{display:grid;gap:1rem}
+    .lead{font-size:1.05rem;line-height:1.6}
+    .grid{display:grid;gap:1.25rem}
     @media(min-width:900px){.grid-2{grid-template-columns:1.1fr .9fr}}
-    .hero-img{width:100%;height:260px;object-fit:cover;border-radius:10px}
-    .btn{display:inline-block;background:#14b8a6;color:#fff;text-decoration:none;
-         padding:.65rem 1rem;border-radius:.6rem;font-weight:600}
-    .list{margin:.5rem 0 0 1.1rem}
-    .strip{background:#f6f8fa;border-radius:10px;padding:1rem;text-align:center;margin:1.25rem 0}
+
+    /* --- Skip link for a11y --- */
+    .skip-link{
+      position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+    }
+    .skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;background:#fff;
+      border:2px solid var(--ring);padding:.4rem .6rem;border-radius:.5rem;z-index:10}
+
+    /* --- Header / Nav --- */
+    .site-header{background:#f2f5f7;border-bottom:1px solid #e6edf2;margin-bottom:.75rem}
+    .site-header .inner{display:flex;align-items:center;gap:1rem;padding:.75rem 0;flex-wrap:wrap}
+    .brand{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:800;color:#ff6d3f;margin:0}
+    .brand a{color:inherit;text-decoration:none}
+    .main-nav{display:flex;gap:1rem;flex-wrap:wrap}
+    .main-nav a{
+      padding:.45rem .55rem;border-radius:.5rem;text-decoration:none;color:#034;
+    }
+    .main-nav a[aria-current="page"]{font-weight:700;background:#eaf6f4}
+    .main-nav a:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+
+    /* --- Hero image & buttons --- */
+    .hero-img{width:100%;height:320px;object-fit:cover;object-position:center;border-radius:12px}
+    .btn{
+      display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
+      padding:.7rem 1rem;border-radius:.7rem;font-weight:700
+    }
+    .btn:hover,.btn:focus-visible{background:var(--brand-700)}
+    .list{margin:.5rem 0 0 1.1rem;line-height:1.55}
+    .strip{background:var(--panel);border-radius:12px;padding:1rem;text-align:center;margin:1.25rem 0}
     footer p{margin:0}
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#content">Skip to main content</a>
+
   <!-- Header/Navigation -->
-  <header class="container" role="banner">
-    <h1>Snazzy Paws Grooming</h1>
-    <nav aria-label="Main navigation">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="services.html">Services</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="booking.html">Booking</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <header class="site-header" role="banner">
+    <div class="container inner">
+      <h1 class="brand"><a href="index.html">Snazzy Paws Grooming</a></h1>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="booking.html">Booking</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main class="container" id="content">
     <!-- Welcome / business summary -->
-    <section class="grid grid-2" aria-labelledby="welcome-heading" style="margin:1rem 0 1.5rem">
+    <section class="grid grid-2" aria-labelledby="welcome-heading" style="margin:1rem 0 1.75rem">
       <div>
         <h2 id="welcome-heading">Welcome</h2>
         <p class="lead">
