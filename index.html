@@ -1,35 +1,88 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Snazzy Paws Grooming</title>
-<link rel="stylesheet" href="assets/css/styles.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snazzy Paws Grooming • Home</title>
+  <link rel="stylesheet" href="assets/css/styles.min.css">
+  <style>
+    /* Simple, assessment-compliant page layout */
+    .container{max-width:1100px;margin:0 auto;padding:0 1rem}
+    .lead{font-size:1.05rem}
+    .grid{display:grid;gap:1rem}
+    @media(min-width:900px){.grid-2{grid-template-columns:1.1fr .9fr}}
+    .hero-img{width:100%;height:260px;object-fit:cover;border-radius:10px}
+    .btn{display:inline-block;background:#14b8a6;color:#fff;text-decoration:none;
+         padding:.65rem 1rem;border-radius:.6rem;font-weight:600}
+    .list{margin:.5rem 0 0 1.1rem}
+    .strip{background:#f6f8fa;border-radius:10px;padding:1rem;text-align:center;margin:1.25rem 0}
+    footer p{margin:0}
+  </style>
 </head>
 <body>
-<header><h1>Snazzy Paws Grooming</h1>
-<nav><a href="index.html" aria-current="page">Home</a>
-<a href="services.html">Services</a>
-<a href="gallery.html">Gallery</a>
-<a href="booking.html">Booking</a>
-<a href="contact.html">Contact</a></nav></header>
-  
-<main>
-  <section style="text-align:center;padding:1rem;">
-    <img src="https://images.unsplash.com/photo-1601758124095-3c28b97e8c52?auto=format&fit=crop&w=1200&q=80"
-         alt="Happy dog freshly groomed at Snazzy Paws Grooming"
-         style="width:100%;max-height:450px;object-fit:cover;border-radius:12px;">
+  <!-- Header/Navigation -->
+  <header class="container" role="banner">
+    <h1>Snazzy Paws Grooming</h1>
+    <nav aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="booking.html">Booking</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-    <h2 style="margin-top:1rem;color:#0B6E4F;">Grooming that makes tails wag!</h2>
-    <p style="font-size:1.1rem;">
-      Friendly, professional dog grooming in Hamilton.<br>
-      From quick trims to full spa packages — your pet deserves the best care.
-    </p>
-    <p>
-      <a href="services.html" style="background:#0B6E4F;color:#fff;padding:.75rem 1.25rem;border-radius:.75rem;text-decoration:none;margin-right:.5rem;">View Services</a>
-      <a href="booking.html" style="background:#FF6B35;color:#fff;padding:.75rem 1.25rem;border-radius:.75rem;text-decoration:none;">Book Now</a>
-    </p>
-  </section>
-</main>
+  <main class="container" id="content">
+    <!-- Welcome / business summary -->
+    <section class="grid grid-2" aria-labelledby="welcome-heading" style="margin:1rem 0 1.5rem">
+      <div>
+        <h2 id="welcome-heading">Welcome</h2>
+        <p class="lead">
+          At Snazzy Paws Grooming, we provide gentle, professional grooming for dogs of all breeds and coat types.
+          Our goal is to make every visit a positive, safe, and stress-free experience — so your pet looks and feels their best.
+        </p>
+        <ul class="list">
+          <li><a href="services.html">See our Services and Prices</a></li>
+          <li><a href="gallery.html">Browse our 4×4 image Gallery</a></li>
+          <li><a href="booking.html" class="btn">Book an Appointment</a></li>
+          <li><a href="contact.html">Find our Contact Details</a></li>
+        </ul>
+      </div>
+      <div>
+        <!-- Local hero image -->
+        <img class="hero-img" src="assets/img/longcoat-groom.jpg"
+             alt="Dog with a long coat being groomed at Snazzy Paws Grooming in Hamilton">
+      </div>
+    </section>
 
-</body></html>
+    <!-- Short selling points -->
+    <section aria-labelledby="why-heading" style="margin:1.25rem 0">
+      <h2 id="why-heading">Why choose us</h2>
+      <ul class="list">
+        <li>Qualified groomers experienced with all breeds and coat types.</li>
+        <li>Stress-free care for puppies, seniors, and anxious pets.</li>
+        <li>Transparent pricing and friendly service.</li>
+      </ul>
+    </section>
+
+    <!-- Opening hours -->
+    <aside class="strip" role="note" aria-label="Opening hours">
+      <strong>Open Mon–Sat, 9am–5pm</strong> • Hamilton, New Zealand
+    </aside>
+
+    <!-- Final call to action -->
+    <section aria-labelledby="cta-heading" style="margin:1rem 0 2rem">
+      <h2 id="cta-heading">Ready to book?</h2>
+      <p class="lead" style="margin:.25rem 0 .75rem">
+        Choose a time that suits you. Tell us your dog’s breed and grooming needs, and we’ll confirm your appointment.
+      </p>
+      <p><a class="btn" href="booking.html">Book Now</a></p>
+    </section>
+  </main>
+
+  <footer class="container" role="contentinfo" style="margin:2rem 0">
+    <p>© Snazzy Paws Grooming • Hamilton • Open Mon–Sat, 9am–5pm</p>
+  </footer>
+</body>
+</html>
+
