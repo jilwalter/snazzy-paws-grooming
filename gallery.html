@@ -109,11 +109,11 @@
   <p style="text-align:center;margin:0 0 1rem;">A look at our happy, freshly groomed pups!</p>
 
   <style>
-    /* True 4×4 gallery grid – exactly what assessment requires */
+    /* True 4×4 grid with larger, fuller images */
     .gallery-grid{
       display:grid;
       grid-template-columns:repeat(4, 1fr);
-      gap:1rem;
+      gap:0.75rem;
       padding:1rem;
     }
     @media (max-width:900px){ .gallery-grid{grid-template-columns:repeat(2, 1fr);} }
@@ -123,7 +123,7 @@
       background:#f6f0e6;
       border:1px solid #e6dfd2;
       border-radius:12px;
-      padding:.7rem;
+      padding:.6rem;
       text-align:center;
       box-shadow:0 0 0 1px #e6dfd2;
     }
@@ -131,108 +131,130 @@
     .gallery-card img{
       display:block;
       width:100%;
-      aspect-ratio: 4 / 3;
+      aspect-ratio:1/1;
       object-fit:cover;
       border-radius:10px;
       background:#fff;
     }
 
     .gallery-card figcaption{
-      margin:.55rem 0 .2rem;
+      margin:.5rem 0 .2rem;
       font-weight:600;
       color:#3a3024;
+      font-size:.95rem;
+    }
+
+    .gallery-card p{
+      color:#5c4e3c;
+      font-size:.85rem;
+      margin:0;
     }
   </style>
 
   <section class="gallery-grid" aria-label="Grooming gallery">
 
-    <!-- 1st Row -->
+    <!-- Row 1 -->
     <figure class="gallery-card">
-      <img src="assets/img/dog-bath.jpg" width="640" height="480" alt="Dog having a warm bath at the salon" decoding="async">
+      <img src="assets/img/dog-bath.jpg" alt="Dog being bathed gently in the grooming tub">
       <figcaption>Bath Time</figcaption>
+      <p>Warm water and pet-safe shampoo for a clean, soft coat.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/dog-shower.jpg" width="640" height="480" alt="Yorkie being rinsed under the shower head" decoding="async">
+      <img src="assets/img/dog-shower.jpg" alt="Small dog being rinsed under a shower">
       <figcaption>Rinse &amp; Shine</figcaption>
+      <p>Quick rinse to remove shampoo and freshen up the coat.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/clipping.jpg" width="640" height="480" alt="Groomer clipping a small dog’s coat" decoding="async">
-      <figcaption>Coat Trim</figcaption>
-    </figure>
-
-    <figure class="gallery-card">
-      <img src="assets/img/styled-cut.jpg" width="640" height="480" alt="Freshly styled cut on a small dog" decoding="async">
-      <figcaption>Styled Cut</figcaption>
-    </figure>
-
-    <!-- 2nd Row -->
-    <figure class="gallery-card">
-      <img src="assets/img/brushing.jpg" width="640" height="480" alt="Brushing a spaniel’s coat on the table" decoding="async">
-      <figcaption>Brushing Session</figcaption>
-    </figure>
-
-    <figure class="gallery-card">
-      <img src="assets/img/puppy-trim.jpg" width="640" height="480" alt="Puppy having a careful face trim" decoding="async">
-      <figcaption>Puppy Trim</figcaption>
-    </figure>
-
-    <figure class="gallery-card">
-      <img src="assets/img/smile-bath.jpg" width="640" height="480" alt="Bulldog smiling in a bubble bath" decoding="async">
+      <img src="assets/img/smile-bath.jpg" alt="Happy bulldog smiling during bath time">
       <figcaption>Happy Pup</figcaption>
+      <p>Every dog leaves the salon feeling fresh and cheerful.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/yorkie-closeup.jpg" width="640" height="640" alt="Yorkie face close up after grooming" decoding="async">
-      <figcaption>Yorkie Style</figcaption>
+      <img src="assets/img/clipping.jpg" alt="Groomer clipping a small dog's fur">
+      <figcaption>Coat Trim</figcaption>
+      <p>Precise clipping to keep coats neat and tidy.</p>
     </figure>
 
-    <!-- 3rd Row -->
+    <!-- Row 2 -->
     <figure class="gallery-card">
-      <img src="assets/img/bow-style.jpg" width="640" height="640" alt="Dog with a pink bow after grooming" decoding="async">
-      <figcaption>Pretty Pup</figcaption>
-    </figure>
-
-    <figure class="gallery-card">
-      <img src="assets/img/haircut-golden.jpg" width="640" height="480" alt="Golden dog with freshly shaped coat" decoding="async">
+      <img src="assets/img/haircut-golden.jpg" alt="Golden retriever getting a trim">
       <figcaption>Golden Cut</figcaption>
+      <p>Soft trimming and styling for medium-coated breeds.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/nail-trim.jpg" width="640" height="480" alt="Groomer trimming a dog’s nails" decoding="async">
-      <figcaption>Nail Trim</figcaption>
+      <img src="assets/img/puppy-trim.jpg" alt="White puppy getting a gentle face trim">
+      <figcaption>Puppy Trim</figcaption>
+      <p>Gentle introduction to grooming for young pups.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/blowdry.jpg" width="640" height="480" alt="Dog being blow dried after a wash" decoding="async">
-      <figcaption>Blow Dry</figcaption>
-    </figure>
-
-    <!-- 4th Row -->
-    <figure class="gallery-card">
-      <img src="assets/img/fancy-bow.jpg" width="640" height="480" alt="Dog posing with a yellow bow tie" decoding="async">
-      <figcaption>Bowtie Finish</figcaption>
+      <img src="assets/img/yorkie-closeup.jpg" alt="Yorkie with freshly groomed face">
+      <figcaption>Yorkie Style</figcaption>
+      <p>Stylish face trim and ear detail for small breeds.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/longcoat-groom.jpg" width="640" height="480" alt="Long-coated dog freshly groomed" decoding="async">
+      <img src="assets/img/bow-style.jpg" alt="Dog with a pink bow after grooming">
+      <figcaption>Pretty Pup</figcaption>
+      <p>Finishing touches with cute accessories and bows.</p>
+    </figure>
+
+    <!-- Row 3 -->
+    <figure class="gallery-card">
+      <img src="assets/img/brushing.jpg" alt="Spaniel being brushed on grooming table">
+      <figcaption>Brushing Session</figcaption>
+      <p>Detangling and brushing for a smooth, shiny coat.</p>
+    </figure>
+
+    <figure class="gallery-card">
+      <img src="assets/img/longcoat-groom.jpg" alt="Long-coated dog freshly styled">
       <figcaption>Gentle Groom</figcaption>
+      <p>Full groom for long-haired dogs needing extra care.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/bath-relax.jpg" width="640" height="480" alt="Dog relaxing at the bath station" decoding="async">
-      <figcaption>Bath &amp; Relax</figcaption>
+      <img src="assets/img/nail-trim.jpg" alt="Groomer trimming a dog's nails">
+      <figcaption>Nail Trim</figcaption>
+      <p>Quick and painless trims to keep paws healthy.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/trim-time.jpg" width="640" height="480" alt="Finishing touches with scissors" decoding="async">
-      <figcaption>Trim Time</figcaption>
+      <img src="assets/img/fancy-bow.jpg" alt="Dog wearing yellow bow tie">
+      <figcaption>Bowtie Finish</figcaption>
+      <p>A polished look for your pet’s final photo moment.</p>
+    </figure>
+
+    <!-- Row 4 -->
+    <figure class="gallery-card">
+      <img src="assets/img/shaved-style.jpg" alt="Dog with a summer shave cut">
+      <figcaption>Summer Style</figcaption>
+      <p>Short, cool cuts to keep dogs comfy in warmer months.</p>
+    </figure>
+
+    <figure class="gallery-card">
+      <img src="assets/img/spray-dry.jpg" alt="Groomer finishing with a spray dryer">
+      <figcaption>Spray &amp; Dry</figcaption>
+      <p>Soft blow dry and conditioning mist to finish the groom.</p>
+    </figure>
+
+    <figure class="gallery-card">
+      <img src="assets/img/pomeranian-comb.jpg" alt="Fluffy pomeranian being combed carefully">
+      <figcaption>Combing Time</figcaption>
+      <p>De-shedding session to remove loose undercoat.</p>
+    </figure>
+
+    <figure class="gallery-card">
+      <img src="assets/img/terrier-portrait.jpg" alt="Terrier posing proudly after grooming">
+      <figcaption>Trim &amp; Pose</figcaption>
+      <p>Fresh trim with a proud new look to show off.</p>
     </figure>
 
   </section>
 </main>
-
 
   <!-- ===== FOOTER ===== -->
   <footer class="container" style="margin:2rem 0">
