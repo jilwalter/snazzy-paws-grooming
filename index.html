@@ -6,88 +6,95 @@
   <title>Snazzy Paws Grooming • Home</title>
   <link rel="stylesheet" href="assets/css/styles.min.css">
   <style>
-    /* ===== Warm & Friendly palette (Option A) ===== */
+    /* ===== Warm theme (same across site) ===== */
     :root{
       --accent:#c49b66;      /* warm tan */
-      --accent-700:#8b6b3f;  /* brown-gold for hover/focus */
-      --bg-cream:#faf8f4;    /* soft page background (optional) */
-      --panel:#f5eee3;       /* tinted box for Welcome */
+      --accent-700:#8b6b3f;  /* brown-gold */
+      --bg-cream:#faf8f4;    /* soft page bg */
+      --panel:#f5eee3;       /* warm panel */
       --ink:#3a3024;         /* main text */
-      --muted:#5c4e3c;       /* paragraph/captions */
-      --line:#e6dfd2;        /* subtle borders */
+      --muted:#5c4e3c;       /* paragraphs/captions */
+      --line:#e6dfd2;        /* light borders */
     }
-
-    /* Page container */
-    .container{max-width:1100px;margin:0 auto;padding:0 1rem}
     body{color:var(--ink); background:var(--bg-cream);}
+    .container{max-width:1100px;margin:0 auto;padding:0 1rem}
 
-    /* Split section: text + image */
+    /* ===== Full-width warm gradient header (Option 2) ===== */
+    header{
+      width:100%;
+      background:linear-gradient(90deg,#8b6b3f 0%, #c49b66 100%);
+      color:#fff;
+      border-bottom:3px solid #8b6b3f;
+      box-shadow:0 2px 6px rgba(0,0,0,.1);
+    }
+    header .container{max-width:1100px;margin:0 auto;padding:0 1rem}
+    header h1{margin:.6rem 0;color:#fff;font-size:1.6rem;letter-spacing:.5px}
+    nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.6rem}
+    nav a{color:#fff;text-decoration:none;padding:.45rem .7rem;border-radius:.4rem;font-weight:500}
+    nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.2)}
+    nav a[aria-current="page"]{background:rgba(255,255,255,.25);font-weight:700;border-bottom:2px solid #fff}
+
+    /* ===== Home page layout ===== */
     .split{display:grid;gap:1.25rem;align-items:center}
     @media(min-width:900px){.split{grid-template-columns:1.05fr .95fr}}
-
-    /* Buttons and links */
-    .btn{
-      display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
-      padding:.7rem 1rem;border-radius:.7rem;font-weight:700
-    }
-    .btn:hover,.btn:focus-visible{background:var(--accent-700)}
-    .link-list{margin:.65rem 0 0 1.15rem;line-height:1.6}
-    .link-list a{color:var(--accent-700);text-decoration:underline}
-    .link-list a:hover,.link-list a:focus-visible{color:var(--accent)}
-
-    /* Welcome panel with warm tint and left accent bar */
     .welcome-section{
       background:var(--panel);
+      border:1px solid var(--line);
       border-radius:12px;
       padding:1.5rem 1.25rem;
-      box-shadow:0 0 0 1px var(--line);
       position:relative;
+      box-shadow:0 0 0 1px var(--line);
     }
     .welcome-section::before{
-      content:"";
-      position:absolute;left:-1px;top:12px;bottom:12px;width:6px;border-radius:6px;background:var(--accent);
+      content:""; position:absolute; left:-1px; top:12px; bottom:12px;
+      width:6px; border-radius:6px; background:var(--accent);
     }
-    .lead{font-size:1.05rem;line-height:1.6;color:var(--muted)}
+    .lead{font-size:1.05rem; line-height:1.6; color:var(--muted)}
+    .feature-img{width:100%; height:auto; border-radius:12px; display:block}
 
-    /* Image */
-    .feature-img{width:100%;height:auto;border-radius:12px;display:block}
+    .link-list{margin:.65rem 0 0 1.15rem; line-height:1.55}
+    .link-list a{color:var(--accent-700); text-decoration:underline}
+    .link-list a:hover,.link-list a:focus-visible{color:var(--accent)}
+    .btn{
+      display:inline-block; background:var(--accent); color:#fff; text-decoration:none;
+      padding:.7rem 1rem; border-radius:.7rem; font-weight:700;
+    }
+    .btn:hover,.btn:focus-visible{background:var(--accent-700)}
 
-    /* Services grid */
+    /* Popular services (simple, compact) */
     .services{margin:1.5rem 0}
-    .services-grid{display:grid;gap:1rem}
+    .services-grid{display:grid; gap:1rem}
     @media(min-width:640px){.services-grid{grid-template-columns:repeat(2,1fr)}}
     @media(min-width:900px){.services-grid{grid-template-columns:repeat(3,1fr)}}
     .card{
-      background:#fff;border:1px solid var(--line);border-radius:12px;
-      padding:1rem;display:flex;gap:.75rem;align-items:flex-start;text-decoration:none;color:inherit
+      background:#fff; border:1px solid var(--line); border-radius:12px; padding:1rem;
+      display:flex; gap:.75rem; align-items:flex-start; text-decoration:none; color:inherit;
     }
-    .card .emoji{font-size:1.4rem;line-height:1}
-    .card h3{margin:.1rem 0 .35rem;font-size:1.05rem;color:var(--ink)}
-    .card p{margin:0;color:var(--muted)}
-    .card:hover,.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-
-    /* Info strip */
-    .strip{background:#f6f0e6;border:1px solid var(--line);border-radius:12px;padding:1rem;text-align:center;margin:1.25rem 0}
+    .card .emoji{font-size:1.4rem; line-height:1}
+    .card h3{margin:.1rem 0 .35rem; font-size:1.05rem; color:var(--ink)}
+    .card p{margin:0; color:var(--muted)}
+    .strip{background:#f6f0e6; border:1px solid var(--line); border-radius:12px; padding:1rem; text-align:center; margin:1.25rem 0}
   </style>
 </head>
 <body>
 
-  <!-- Header (kept EXACTLY like your other pages) -->
+  <!-- Full-width header (same markup as other pages) -->
   <header>
-    <h1>Snazzy Paws Grooming</h1>
-    <nav>
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="services.html">Services</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="booking.html">Booking</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div class="container">
+      <h1>Snazzy Paws Grooming</h1>
+      <nav>
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="booking.html">Booking</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main class="container" id="content">
-    <!-- Split layout: Welcome (with colour) + portrait on the side -->
+    <!-- Split layout: welcome text (with colour) + portrait -->
     <section class="split" aria-labelledby="welcome-heading" style="margin:1.25rem 0 2rem;">
-      <!-- Text with warm panel -->
       <div class="welcome-section">
         <h2 id="welcome-heading">Welcome</h2>
         <p class="lead">Gentle, friendly grooming for every dog, every time.</p>
@@ -111,58 +118,27 @@
         <p style="margin-top:.9rem;"><a class="btn" href="booking.html">Book an appointment</a></p>
       </div>
 
-      <!-- Image (full portrait, not cropped) -->
       <div>
         <img class="feature-img" src="assets/img/longcoat-groom.jpg" alt="Long-coated dog freshly groomed at Snazzy Paws Grooming">
       </div>
     </section>
 
-    <!-- Popular services -->
+    <!-- Popular services preview -->
     <section class="services" aria-labelledby="services-glance">
       <h2 id="services-glance">Popular services</h2>
       <div class="services-grid">
-        <a class="card" href="services.html">
-          <span class="emoji" aria-hidden="true">🛁</span>
-          <div>
-            <h3>Bath &amp; blow dry</h3>
-            <p>Warm bath, gentle shampoo and a full dry for a soft, clean coat.</p>
-          </div>
-        </a>
-
-        <a class="card" href="services.html">
-          <span class="emoji" aria-hidden="true">✂️</span>
-          <div>
-            <h3>Full groom</h3>
-            <p>Clip or scissor style to suit your dog’s breed and lifestyle.</p>
-          </div>
-        </a>
-
-        <a class="card" href="services.html">
-          <span class="emoji" aria-hidden="true">🐾</span>
-          <div>
-            <h3>Nail trim</h3>
-            <p>Quick, low-stress trims to keep paws healthy and comfortable.</p>
-          </div>
-        </a>
+        <a class="card" href="services.html"><span class="emoji" aria-hidden="true">🛁</span><div><h3>Bath &amp; blow dry</h3><p>Warm bath, gentle shampoo and a full dry for a soft, clean coat.</p></div></a>
+        <a class="card" href="services.html"><span class="emoji" aria-hidden="true">✂️</span><div><h3>Full groom</h3><p>Clip or scissor style to suit your dog’s breed and lifestyle.</p></div></a>
+        <a class="card" href="services.html"><span class="emoji" aria-hidden="true">🐾</span><div><h3>Nail trim</h3><p>Quick, low-stress trims to keep paws healthy and comfortable.</p></div></a>
       </div>
     </section>
 
-    <!-- Why choose us -->
-    <section aria-labelledby="why-heading">
-      <h2 id="why-heading">Why choose us</h2>
-      <ul class="link-list" style="margin-left:1.15rem">
-        <li>Experienced, qualified groomers who love what they do.</li>
-        <li>Calm care for every dog, from puppies to seniors.</li>
-        <li>Honest pricing, friendly service and results you’ll love.</li>
-      </ul>
-    </section>
-
-    <!-- Opening hours -->
+    <!-- Hours strip -->
     <aside class="strip" role="note" aria-label="Opening hours">
       <strong>Open Mon–Sat, 9am–5pm</strong> • Hamilton, New Zealand
     </aside>
 
-    <!-- Final call-to-action -->
+    <!-- Final CTA -->
     <section aria-labelledby="cta-heading" style="margin:1rem 0 2rem;">
       <h2 id="cta-heading">Ready to book?</h2>
       <p class="lead" style="margin:.25rem 0 .75rem">
@@ -177,4 +153,5 @@
   </footer>
 </body>
 </html>
+
 
