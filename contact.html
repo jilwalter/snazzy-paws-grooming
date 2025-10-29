@@ -13,10 +13,11 @@
   Student ID: 5133764
   Assessment: BIT607 Web Development - Assessment 2
   Description: Contact page with embedded map and contact form.
+  Notes: Header layout updated to match all pages (flex: title left, nav right).
 -->
 
 <style>
-  /* ===== Warm theme colours (same as all pages) ===== */
+  /* ===== Warm theme colours (same across site) ===== */
   :root{
     --accent:#c49b66;
     --accent-700:#8b6b3f;
@@ -30,7 +31,7 @@
   body{color:var(--ink); background:var(--bg-cream);}
   .container{max-width:1100px;margin:0 auto;padding:0 1rem}
 
-  /* ===== Full-width gradient header ===== */
+  /* ===== Full-width gradient header (consistent site-wide) ===== */
   header{
     width:100%;
     background:linear-gradient(90deg,#8b6b3f 0%,#c49b66 100%);
@@ -38,9 +39,16 @@
     border-bottom:3px solid #8b6b3f;
     box-shadow:0 2px 6px rgba(0,0,0,.1);
   }
-  header .container{max-width:1100px;margin:0 auto;padding:0 1rem}
-  header h1{margin:.6rem 0;color:#fff;font-size:1.6rem;letter-spacing:.5px}
-  nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.6rem}
+  /* Make header bar horizontal & consistent with other pages */
+  header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    padding:1rem 0;             /* spacing matches other pages */
+  }
+  header h1{margin:0;color:#fff;font-size:1.6rem;letter-spacing:.5px}
+  nav{display:flex;flex-wrap:wrap;gap:.5rem}
   nav a{color:#fff;text-decoration:none;padding:.45rem .7rem;border-radius:.4rem;font-weight:500}
   nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.2)}
   nav a[aria-current="page"]{background:rgba(255,255,255,.25);font-weight:700;border-bottom:2px solid #fff}
@@ -86,11 +94,14 @@
 
   .map{width:100%;height:320px;border:0;border-radius:8px}
   .help{color:var(--muted);font-size:.95rem}
+  
+  /* Footer (consistent) */
+  footer{ text-align:center; margin:2rem 0; color:var(--muted); font-size:.9rem; }
 </style>
 </head>
 <body>
 
-  <!-- ===== HEADER (same on all pages) ===== -->
+  <!-- ===== HEADER (same layout across site) ===== -->
   <header>
     <div class="container">
       <h1>Snazzy Paws Grooming</h1>
@@ -117,9 +128,11 @@
       <!-- map section -->
       <div class="card">
         <h3>Find us</h3>
-        <!-- simple embedded map (Hamilton, NZ) -->
-        <iframe class="map"
+        <!-- embedded map with a descriptive title for accessibility -->
+        <iframe
+          class="map"
           src="https://www.google.com/maps?q=Hamilton%20New%20Zealand&output=embed"
+          title="Map showing Snazzy Paws Grooming in Hamilton, New Zealand"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           aria-label="Map of Hamilton, New Zealand">
@@ -133,7 +146,7 @@
         <!-- simple contact form -->
         <form action="#" method="post">
           <label for="cname">Your name</label>
-          <input id="cname" name="name" required>
+          <input id="cname" name="name" type="text" required>
 
           <label for="cemail">Email</label>
           <input id="cemail" name="email" type="email" required>
@@ -150,7 +163,7 @@
   </main>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="container" style="margin:2rem 0">
+  <footer class="container">
     <p>© Snazzy Paws Grooming • Hamilton • Open Mon–Sat, 9am–5pm</p>
   </footer>
 </body>
