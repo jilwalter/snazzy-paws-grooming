@@ -1,94 +1,95 @@
 <!doctype html>
 <html lang="en">
-
-<style>
-/* Snazzy Paws – Warm theme (Option A) */
-:root{
-  --accent:#c49b66;      /* warm tan */
-  --accent-700:#8b6b3f;  /* brown-gold (hover/focus) */
-  --bg-cream:#faf8f4;    /* soft page bg */
-  --panel:#f5eee3;       /* warm panel/tint */
-  --ink:#3a3024;         /* main text */
-  --muted:#5c4e3c;       /* paragraphs/captions */
-  --line:#e6dfd2;        /* light borders */
-}
-body{color:var(--ink); background:var(--bg-cream);}
-a{color:var(--accent-700); text-decoration:underline;}
-a:hover, a:focus-visible{color:var(--accent);}
-
-.btn{
-  display:inline-block; background:var(--accent); color:#fff; text-decoration:none;
-  padding:.65rem 1rem; border-radius:.65rem; font-weight:700;
-}
-.btn:hover, .btn:focus-visible{background:var(--accent-700);}
-
-/* Optional: highlight current nav link consistently */
-nav a[aria-current="page"]{font-weight:700; border-bottom:2px solid var(--accent);}
-
-/* Nice defaults for tables and forms across pages */
-table{border-collapse:collapse; width:100%;}
-th, td{border:1px solid var(--line); padding:.6rem;}
-th{background:#f6f0e6; color:var(--ink); text-align:left;}
-
-input, select, textarea{
-  width:100%; max-width:700px; padding:.6rem .7rem; border:1px solid var(--line);
-  border-radius:.5rem; background:#fff; color:var(--ink);
-}
-input:focus, select:focus, textarea:focus{
-  outline:2px solid var(--accent); outline-offset:2px; border-color:var(--accent);
-}
-label{display:block; margin:.6rem 0 .25rem; color:var(--muted);}
-</style>
-
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Contact • Snazzy Paws Grooming</title>
 <link rel="stylesheet" href="assets/css/styles.min.css">
+<style>
+:root{
+  --accent:#c49b66; --accent-700:#8b6b3f; --bg-cream:#faf8f4; --panel:#f5eee3;
+  --ink:#3a3024; --muted:#5c4e3c; --line:#e6dfd2;
+}
+body{color:var(--ink); background:var(--bg-cream);}
+.container{max-width:1100px;margin:0 auto;padding:0 1rem}
+
+/* Full-width gradient header */
+header{width:100%;background:linear-gradient(90deg,#8b6b3f 0%,#c49b66 100%);color:#fff;
+  border-bottom:3px solid #8b6b3f;box-shadow:0 2px 6px rgba(0,0,0,.1)}
+header .container{max-width:1100px;margin:0 auto;padding:0 1rem}
+header h1{margin:.6rem 0;color:#fff;font-size:1.6rem;letter-spacing:.5px}
+nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.6rem}
+nav a{color:#fff;text-decoration:none;padding:.45rem .7rem;border-radius:.4rem;font-weight:500}
+nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.2)}
+nav a[aria-current="page"]{background:rgba(255,255,255,.25);font-weight:700;border-bottom:2px solid #fff}
+
+/* Two-col layout for map + form */
+.grid{display:grid;gap:1rem;margin:1rem 0 2rem}
+@media(min-width:900px){.grid{grid-template-columns:1.1fr .9fr}}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1rem}
+label{display:block;margin:.6rem 0 .25rem;color:var(--muted)}
+input,textarea{
+  width:100%;max-width:720px;padding:.65rem .75rem;border:1px solid var(--line);
+  border-radius:.5rem;background:#fff;color:var(--ink)
+}
+input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:2px;border-color:var(--accent)}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:.7rem 1rem;border-radius:.7rem;font-weight:700}
+.btn:hover,.btn:focus-visible{background:var(--accent-700)}
+.map{width:100%;height:320px;border:0;border-radius:8px}
+.help{color:var(--muted);font-size:.95rem}
+</style>
 </head>
 <body>
 <header>
-  <h1>Snazzy Paws Grooming</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="booking.html">Booking</a>
-    <a href="contact.html" aria-current="page">Contact</a>
-  </nav>
+  <div class="container">
+    <h1>Snazzy Paws Grooming</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="booking.html">Booking</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<main>
-  <h2>Contact us</h2>
-  <div>
-    <h3>Send a message</h3>
-    <form action="#" method="post" novalidate>
-      <p><label for="name">Name</label><br>
-      <input id="name" name="name" type="text" autocomplete="name" required></p>
+<main class="container">
+  <h2>Contact &amp; Location</h2>
+  <p class="help">Have a question or need a hand with booking? Send us a message or visit us in Hamilton.</p>
 
-      <p><label for="email">Email</label><br>
-      <input id="email" name="email" type="email" autocomplete="email" required></p>
+  <section class="grid" aria-label="Map and contact form">
+    <!-- Map -->
+    <div class="card">
+      <h3>Find us</h3>
+      <!-- You can replace the src with your exact address map embed if you have one -->
+      <iframe class="map"
+        src="https://www.google.com/maps?q=Hamilton%20New%20Zealand&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Map of Hamilton, New Zealand"></iframe>
+      <p class="help" style="margin-top:.5rem">Open Mon–Sat, 9am–5pm • Hamilton, New Zealand</p>
+    </div>
 
-      <p><label for="phone">Phone</label><br>
-      <input id="phone" name="phone" type="tel" autocomplete="tel"></p>
+    <!-- Form -->
+    <div class="card">
+      <h3>Send us a message</h3>
+      <form action="#" method="post">
+        <label for="cname">Your name</label>
+        <input id="cname" name="name" required>
 
-      <p><label for="comment">Comment</label><br>
-      <textarea id="comment" name="comment" rows="5" required></textarea></p>
+        <label for="cemail">Email</label>
+        <input id="cemail" name="email" type="email" required>
 
-      <p><button type="submit">Send</button></p>
-    </form>
-  </div>
+        <label for="cmsg">Message</label>
+        <textarea id="cmsg" name="message" rows="6" required></textarea>
 
-  <div>
-    <h3>Find us</h3>
-    <iframe
-      title="Hamilton, New Zealand map"
-      src="https://www.google.com/maps?q=Hamilton,New%20Zealand&output=embed"
-      width="600" height="360" style="border:0" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
+        <p style="margin-top:1rem"><button class="btn" type="submit">Send message</button></p>
+      </form>
+    </div>
+  </section>
 </main>
 
-<footer><p>Open Mon–Sat, 9am–5pm</p></footer>
+<footer class="container" style="margin:2rem 0">
+  <p>© Snazzy Paws Grooming • Hamilton • Open Mon–Sat, 9am–5pm</p>
+</footer>
 </body>
 </html>
