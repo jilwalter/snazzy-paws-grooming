@@ -9,11 +9,11 @@
   <!-- 
     File: index.html 
     Project: Snazzy Paws Grooming
-    Student Name: Jil Walter
+    Student: Jil Walter
     Student ID: 5133764
     Assessment: BIT607 Web Development - Assessment 2
-    Description: Home page for the dog grooming website.
-    Includes a welcome section, service previews, and booking link.
+    Description: Home page for Snazzy Paws Grooming.
+    Header updated to match all site pages for consistent layout.
   -->
 
   <style>
@@ -28,10 +28,21 @@
       --line:#e6dfd2;        /* light border colour */
     }
 
-    body{color:var(--ink); background:var(--bg-cream);}
-    .container{max-width:1100px;margin:0 auto;padding:0 1rem}
+    body{
+      color:var(--ink);
+      background:var(--bg-cream);
+      font-family:Arial, sans-serif;
+      margin:0;
+      padding:0;
+    }
 
-    /* ===== Site header and navigation bar ===== */
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 1rem;
+    }
+
+    /* ===== SITE HEADER (same on every page) ===== */
     header{
       width:100%;
       background:linear-gradient(90deg,#8b6b3f 0%, #c49b66 100%);
@@ -39,12 +50,47 @@
       border-bottom:3px solid #8b6b3f;
       box-shadow:0 2px 6px rgba(0,0,0,.1);
     }
-    header .container{max-width:1100px;margin:0 auto;padding:0 1rem}
-    header h1{margin:.6rem 0;color:#fff;font-size:1.6rem;letter-spacing:.5px}
-    nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.6rem}
-    nav a{color:#fff;text-decoration:none;padding:.45rem .7rem;border-radius:.4rem;font-weight:500}
-    nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.2)}
-    nav a[aria-current="page"]{background:rgba(255,255,255,.25);font-weight:700;border-bottom:2px solid #fff}
+
+    /* Flex layout for consistent horizontal alignment */
+    header .container{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:1rem 0;
+    }
+
+    header h1{
+      margin:0;
+      color:#fff;
+      font-size:1.6rem;
+      letter-spacing:.5px;
+    }
+
+    nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem;
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      padding:.45rem .7rem;
+      border-radius:.4rem;
+      font-weight:500;
+    }
+
+    nav a:hover,
+    nav a:focus-visible{
+      background:rgba(255,255,255,.2);
+    }
+
+    nav a[aria-current="page"]{
+      background:rgba(255,255,255,.25);
+      font-weight:700;
+      border-bottom:2px solid #fff;
+    }
 
     /* ===== Home page layout styles ===== */
     .split{display:grid;gap:1.25rem;align-items:center}
@@ -62,8 +108,12 @@
 
     /* left colour bar on the welcome section */
     .welcome-section::before{
-      content:""; position:absolute; left:-1px; top:12px; bottom:12px;
-      width:6px; border-radius:6px; background:var(--accent);
+      content:"";
+      position:absolute;
+      left:-1px; top:12px; bottom:12px;
+      width:6px;
+      border-radius:6px;
+      background:var(--accent);
     }
 
     .lead{font-size:1.05rem; line-height:1.6; color:var(--muted)}
@@ -74,8 +124,13 @@
     .link-list a{color:var(--accent-700); text-decoration:underline}
     .link-list a:hover,.link-list a:focus-visible{color:var(--accent)}
     .btn{
-      display:inline-block; background:var(--accent); color:#fff; text-decoration:none;
-      padding:.7rem 1rem; border-radius:.7rem; font-weight:700;
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      text-decoration:none;
+      padding:.7rem 1rem;
+      border-radius:.7rem;
+      font-weight:700;
     }
     .btn:hover,.btn:focus-visible{background:var(--accent-700)}
 
@@ -85,8 +140,15 @@
     @media(min-width:640px){.services-grid{grid-template-columns:repeat(2,1fr)}}
     @media(min-width:900px){.services-grid{grid-template-columns:repeat(3,1fr)}}
     .card{
-      background:#fff; border:1px solid var(--line); border-radius:12px; padding:1rem;
-      display:flex; gap:.75rem; align-items:flex-start; text-decoration:none; color:inherit;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:1rem;
+      display:flex;
+      gap:.75rem;
+      align-items:flex-start;
+      text-decoration:none;
+      color:inherit;
     }
     .card .emoji{font-size:1.4rem; line-height:1}
     .card h3{margin:.1rem 0 .35rem; font-size:1.05rem; color:var(--ink)}
@@ -99,17 +161,16 @@
       border-radius:12px;
       padding:1rem;
       text-align:center;
-      margin:1.25rem 0
+      margin:1.25rem 0;
     }
   </style>
 </head>
 <body>
 
-  <!-- ===== HEADER (same on every page) ===== -->
+  <!-- ===== HEADER (identical across site) ===== -->
   <header>
     <div class="container">
       <h1>Snazzy Paws Grooming</h1>
-      <!-- main navigation menu -->
       <nav>
         <a href="index.html" aria-current="page">Home</a>
         <a href="services.html">Services</a>
