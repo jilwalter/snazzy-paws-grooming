@@ -104,34 +104,90 @@
   </header>
 
   <!-- ===== MAIN CONTENT ===== -->
-  <main class="container">
-    <!-- heading and intro -->
-    <h2 style="margin-top:1.25rem">Gallery</h2>
-    <p class="lead" style="color:var(--muted)">A look at our happy, freshly groomed pups.</p>
+ <main>
+  <h2 style="text-align:center;">Gallery</h2>
+  <p style="text-align:center;">A look at our happy, freshly groomed pups!</p>
 
-    <!-- 4x4 grid of images -->
-    <div class="gallery-grid">
-      <!-- 1: eager load -->
-      <figure><img src="assets/img/nail-trim.jpg" alt="Groomer trimming a small dog’s nails"><figcaption>Nail Trim</figcaption></figure>
+  <!-- Responsive 4×4 grid -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;padding:1rem;">
 
-      <!-- 2–16: lazy load -->
-      <figure><img src="assets/img/haircut-golden.jpg" alt="Groomer styling a golden retriever’s coat" loading="lazy" decoding="async"><figcaption>Gentle Groom</figcaption></figure>
-      <figure><img src="assets/img/dog-bath.jpg" alt="Dog enjoying a bath at the salon" loading="lazy" decoding="async"><figcaption>Bath Time</figcaption></figure>
-      <figure><img src="assets/img/dog-shower.jpg" alt="Dog being rinsed with water" loading="lazy" decoding="async"><figcaption>Rinse &amp; Shine</figcaption></figure>
-      <figure><img src="assets/img/clipping.jpg" alt="Groomer using clippers on a Yorkie" loading="lazy" decoding="async"><figcaption>Coat Trim</figcaption></figure>
-      <figure><img src="assets/img/styled-cut.jpg" alt="Freshly groomed dog posing on the table" loading="lazy" decoding="async"><figcaption>Styled Cut</figcaption></figure>
-      <figure><img src="assets/img/spray-dry.jpg" alt="Groomer spraying coat to finish" loading="lazy" decoding="async"><figcaption>Finishing Touch</figcaption></figure>
-      <figure><img src="assets/img/puppy-trim.jpg" alt="Puppy getting a careful face trim" loading="lazy" decoding="async"><figcaption>Puppy Trim</figcaption></figure>
-      <figure><img src="assets/img/bow-style.jpg" alt="Dog with a pink bow after grooming" loading="lazy" decoding="async"><figcaption>Pretty Pup</figcaption></figure>
-      <figure><img src="assets/img/brushing.jpg" alt="Groomer brushing a spaniel’s fur" loading="lazy" decoding="async"><figcaption>Brushing Session</figcaption></figure>
-      <figure><img src="assets/img/shaved-style.jpg" alt="Chinese Crested with a neat summer trim" loading="lazy" decoding="async"><figcaption>Summer Cut</figcaption></figure>
-      <figure><img src="assets/img/blowdry.jpg" alt="Dog being blow-dried after a wash" loading="lazy" decoding="async"><figcaption>Blow Dry</figcaption></figure>
-      <figure><img src="assets/img/smile-bath.jpg" alt="Bulldog smiling during bath" loading="lazy" decoding="async"><figcaption>Happy Pup</figcaption></figure>
-      <figure><img src="assets/img/pomeranian-comb.jpg" alt="Groomer combing a fluffy white dog" loading="lazy" decoding="async"><figcaption>Combing Time</figcaption></figure>
-      <figure><img src="assets/img/yorkie-closeup.jpg" alt="Yorkie with a freshly trimmed face" loading="lazy" decoding="async"><figcaption>Yorkie Style</figcaption></figure>
-      <figure><img src="assets/img/fancy-bow.jpg" alt="Dog posing proudly with a yellow bow tie" loading="lazy" decoding="async"><figcaption>Bowtie Finish</figcaption></figure>
-    </div>
-  </main>
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/haircut-golden.jpg" alt="Groomer styling a golden retriever’s coat" width="1150" height="768" fetchpriority="high">
+      <figcaption>Gentle Groom</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/dog-bath.jpg" alt="Dog enjoying a bath at the salon" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption>Bath Time</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/dog-shower.jpg" alt="Dog being rinsed with water" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption>Rinse &amp; Shine</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/clipping.jpg" alt="Groomer using clippers on a Yorkie" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption>Coat Trim</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/styled-cut.jpg" alt="Freshly groomed dog posing on the table" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption>Styled Cut</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/brushing.jpg" alt="Groomer brushing a spaniel’s fur" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption>Brushing Session</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/puppy-trim.jpg" alt="Puppy getting a careful face trim" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption>Puppy Trim</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/smile-bath.jpg" alt="Bulldog smiling during bath" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption>Happy Pup</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/yorkie-closeup.jpg" alt="Yorkie with a freshly trimmed face" width="768" height="768" loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption>Yorkie Style</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/bow-style.jpg" alt="Dog with a pink bow after grooming" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption>Pretty Pup</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/haircut-golden.jpg" alt="Golden retriever getting groomed" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption>Golden Cut</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/dog-bath.jpg" alt="Dog in warm water bath" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption>Bath &amp; Relax</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/clipping.jpg" alt="Groomer clipping small dog’s coat" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption>Trim Time</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/styled-cut.jpg" alt="Perfectly styled haircut for a dog" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption>Styled Look</figcaption>
+    </figure>
+
+    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
+      <img src="assets/img/fancy-bow.jpg" alt="Dog posing proudly with a yellow bow tie" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption>Bowtie Finish</figcaption>
+    </figure>
+
+  </div>
+</main>
 
   <!-- ===== FOOTER ===== -->
   <footer class="container" style="margin:2rem 0">
