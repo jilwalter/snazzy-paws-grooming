@@ -5,89 +5,147 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Booking • Snazzy Paws Grooming</title>
 <link rel="stylesheet" href="assets/css/styles.min.css">
+
+<!-- 
+  File: booking.html
+  Project: Snazzy Paws Grooming
+  Student Name: Jil Walter
+  Student ID: 5133764
+  Assessment: BIT607 Web Development - Assessment 2
+  Description: Booking page with a simple request form.
+-->
+
 <style>
-:root{
-  --accent:#c49b66; --accent-700:#8b6b3f; --bg-cream:#faf8f4; --panel:#f5eee3;
-  --ink:#3a3024; --muted:#5c4e3c; --line:#e6dfd2;
-}
-body{color:var(--ink); background:var(--bg-cream);}
-.container{max-width:1100px;margin:0 auto;padding:0 1rem}
+  /* ===== Warm theme (same colours as the rest of the site) ===== */
+  :root{
+    --accent:#c49b66;      /* button + highlights */
+    --accent-700:#8b6b3f;  /* hover state */
+    --bg-cream:#faf8f4;    /* page background */
+    --panel:#f5eee3;       /* soft panel (not used much here) */
+    --ink:#3a3024;         /* main text */
+    --muted:#5c4e3c;       /* helper text */
+    --line:#e6dfd2;        /* borders */
+  }
 
-/* Full-width gradient header */
-header{width:100%;background:linear-gradient(90deg,#8b6b3f 0%,#c49b66 100%);color:#fff;
-  border-bottom:3px solid #8b6b3f;box-shadow:0 2px 6px rgba(0,0,0,.1)}
-header .container{max-width:1100px;margin:0 auto;padding:0 1rem}
-header h1{margin:.6rem 0;color:#fff;font-size:1.6rem;letter-spacing:.5px}
-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.6rem}
-nav a{color:#fff;text-decoration:none;padding:.45rem .7rem;border-radius:.4rem;font-weight:500}
-nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.2)}
-nav a[aria-current="page"]{background:rgba(255,255,255,.25);font-weight:700;border-bottom:2px solid #fff}
+  body{color:var(--ink); background:var(--bg-cream);}
+  .container{max-width:1100px;margin:0 auto;padding:0 1rem}
 
-/* Form */
-form{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1rem;margin:1rem 0 2rem}
-label{display:block;margin:.6rem 0 .25rem;color:var(--muted)}
-input,select,textarea{
-  width:100%;max-width:720px;padding:.65rem .75rem;border:1px solid var(--line);
-  border-radius:.5rem;background:#fff;color:var(--ink)
-}
-input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:2px;border-color:var(--accent)}
-.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:.7rem 1rem;border-radius:.7rem;font-weight:700}
-.btn:hover,.btn:focus-visible{background:var(--accent-700)}
-.help{color:var(--muted);font-size:.95rem}
+  /* ===== Full-width gradient header (matches other pages) ===== */
+  header{
+    width:100%;
+    background:linear-gradient(90deg,#8b6b3f 0%,#c49b66 100%);
+    color:#fff;
+    border-bottom:3px solid #8b6b3f;
+    box-shadow:0 2px 6px rgba(0,0,0,.1);
+  }
+  header .container{max-width:1100px;margin:0 auto;padding:0 1rem}
+  header h1{margin:.6rem 0;color:#fff;font-size:1.6rem;letter-spacing:.5px}
+  nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.6rem}
+  nav a{color:#fff;text-decoration:none;padding:.45rem .7rem;border-radius:.4rem;font-weight:500}
+  nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.2)}
+  nav a[aria-current="page"]{background:rgba(255,255,255,.25);font-weight:700;border-bottom:2px solid #fff}
+
+  /* ===== Booking form styles ===== */
+  .lead{color:var(--muted);font-size:1.05rem;line-height:1.6}
+  form{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:1rem;
+    margin:1rem 0 2rem;
+  }
+  label{display:block;margin:.6rem 0 .25rem;color:var(--muted)}
+  input,select,textarea{
+    width:100%;
+    max-width:720px;
+    padding:.65rem .75rem;
+    border:1px solid var(--line);
+    border-radius:.5rem;
+    background:#fff;
+    color:var(--ink);
+  }
+  input:focus,select:focus,textarea:focus{
+    outline:2px solid var(--accent);
+    outline-offset:2px;
+    border-color:var(--accent);
+  }
+  .btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    text-decoration:none;
+    padding:.7rem 1rem;
+    border-radius:.7rem;
+    font-weight:700;
+  }
+  .btn:hover,.btn:focus-visible{background:var(--accent-700)}
+  .help{color:var(--muted);font-size:.95rem}
 </style>
 </head>
 <body>
-<header>
-  <div class="container">
-    <h1>Snazzy Paws Grooming</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="booking.html" aria-current="page">Booking</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
 
-<main class="container">
-  <h2>Book an appointment</h2>
-  <p class="help">Tell us a few details and we’ll confirm your time.</p>
+  <!-- ===== HEADER (same structure everywhere) ===== -->
+  <header>
+    <div class="container">
+      <h1>Snazzy Paws Grooming</h1>
+      <!-- site navigation -->
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="booking.html" aria-current="page">Booking</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <form action="#" method="post">
-    <label for="name">Your name</label>
-    <input id="name" name="name" required>
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="container">
+    <!-- page title + quick note -->
+    <h2>Book an appointment</h2>
+    <p class="help">Fill this in and we’ll get back to you to confirm the time.</p>
 
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" required>
+    <!-- simple booking form (not hooked to a backend) -->
+    <form action="#" method="post">
+      <!-- basic contact details -->
+      <label for="name">Your name</label>
+      <input id="name" name="name" required>
 
-    <label for="phone">Phone</label>
-    <input id="phone" name="phone" type="tel" required>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required>
 
-    <label for="dog">Dog’s name &amp; breed</label>
-    <input id="dog" name="dog" placeholder="e.g., Bella – Cavoodle">
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" type="tel" required>
 
-    <label for="service">Service</label>
-    <select id="service" name="service" required>
-      <option value="">Select a service…</option>
-      <option>Bath &amp; blow dry</option>
-      <option>Full groom</option>
-      <option>Nail trim</option>
-      <option>De-shedding (add-on)</option>
-    </select>
+      <!-- dog + service info -->
+      <label for="dog">Dog’s name &amp; breed</label>
+      <input id="dog" name="dog" placeholder="e.g., Bella – Cavoodle">
 
-    <label for="date">Preferred date</label>
-    <input id="date" name="date" type="date" required>
+      <label for="service">Service</label>
+      <select id="service" name="service" required>
+        <option value="">Select a service…</option>
+        <option>Bath &amp; blow dry</option>
+        <option>Full groom</option>
+        <option>Nail trim</option>
+        <option>De-shedding (add-on)</option>
+      </select>
 
-    <label for="notes">Notes</label>
-    <textarea id="notes" name="notes" rows="4" placeholder="Anything we should know? (coat condition, anxiety, etc.)"></textarea>
+      <label for="date">Preferred date</label>
+      <input id="date" name="date" type="date" required>
 
-    <p style="margin-top:1rem"><button class="btn" type="submit">Request booking</button></p>
-  </form>
-</main>
+      <label for="notes">Notes</label>
+      <textarea id="notes" name="notes" rows="4" placeholder="Anything we should know? (coat condition, anxiety, etc.)"></textarea>
 
-<footer class="container" style="margin:2rem 0">
-  <p>© Snazzy Paws Grooming • Hamilton • Open Mon–Sat, 9am–5pm</p>
-</footer>
+      <!-- submit button -->
+      <p style="margin-top:1rem">
+        <button class="btn" type="submit">Request booking</button>
+      </p>
+    </form>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="container" style="margin:2rem 0">
+    <p>© Snazzy Paws Grooming • Hamilton • Open Mon–Sat, 9am–5pm</p>
+  </footer>
 </body>
 </html>
