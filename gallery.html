@@ -104,90 +104,140 @@
   </header>
 
   <!-- ===== MAIN CONTENT ===== -->
- <main>
-  <h2 style="text-align:center;">Gallery</h2>
-  <p style="text-align:center;">A look at our happy, freshly groomed pups!</p>
+ <main class="container" id="content">
+  <h2 style="text-align:center;margin:1rem 0 .25rem">Gallery</h2>
+  <p style="text-align:center;margin:0 0 1rem;">A look at our happy, freshly groomed pups!</p>
 
-  <!-- Responsive 4×4 grid -->
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;padding:1rem;">
+  <style>
+    /* Larger, fast-loading 4×4 grid (no lazy loading) */
+    .gallery-grid{
+      display:grid; gap:1rem; padding:0 1rem;
+      grid-template-columns:repeat(2,1fr);
+    }
+    @media (min-width:760px){ .gallery-grid{ grid-template-columns:repeat(4,1fr); } }
 
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/haircut-golden.jpg" alt="Groomer styling a golden retriever’s coat" width="1150" height="768" fetchpriority="high">
-      <figcaption>Gentle Groom</figcaption>
-    </figure>
+    figure.gallery-card{
+      background:#f6f0e6; border:1px solid #e6dfd2; border-radius:12px;
+      padding:.7rem; text-align:center; box-shadow:0 0 0 1px #e6dfd2;
+    }
+    .gallery-card img{
+      display:block; width:100%;
+      /* Make tiles bigger and consistent */
+      aspect-ratio: 4 / 3;           /* keeps a clean shape */
+      height:auto;                   /* aspect-ratio controls height */
+      object-fit:cover;
+      border-radius:10px; background:#fff;
+    }
+    .gallery-card figcaption{
+      margin:.55rem 0 .2rem; font-weight:600; color:#3a3024;
+    }
+  </style>
 
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/dog-bath.jpg" alt="Dog enjoying a bath at the salon" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+  <section class="gallery-grid" aria-label="Grooming gallery">
+
+    <!-- Row 1 -->
+    <figure class="gallery-card">
+      <img src="assets/img/dog-bath.jpg" decoding="async" width="640" height="480"
+           alt="Dog having a warm bath at the salon">
       <figcaption>Bath Time</figcaption>
     </figure>
 
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/dog-shower.jpg" alt="Dog being rinsed with water" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+    <figure class="gallery-card">
+      <img src="assets/img/dog-shower.jpg" decoding="async" width="640" height="480"
+           alt="Yorkie being rinsed under the shower head">
       <figcaption>Rinse &amp; Shine</figcaption>
     </figure>
 
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/clipping.jpg" alt="Groomer using clippers on a Yorkie" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+    <figure class="gallery-card">
+      <img src="assets/img/clipping.jpg" decoding="async" width="640" height="480"
+           alt="Groomer clipping a small dog’s coat">
       <figcaption>Coat Trim</figcaption>
     </figure>
 
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/styled-cut.jpg" alt="Freshly groomed dog posing on the table" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+    <figure class="gallery-card">
+      <img src="assets/img/styled-cut.jpg" decoding="async" width="640" height="480"
+           alt="Freshly styled cut on a small dog">
       <figcaption>Styled Cut</figcaption>
     </figure>
 
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/brushing.jpg" alt="Groomer brushing a spaniel’s fur" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+    <!-- Row 2 -->
+    <figure class="gallery-card">
+      <img src="assets/img/brushing.jpg" decoding="async" width="640" height="480"
+           alt="Brushing a spaniel’s coat on the table">
       <figcaption>Brushing Session</figcaption>
     </figure>
 
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/puppy-trim.jpg" alt="Puppy getting a careful face trim" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+    <figure class="gallery-card">
+      <img src="assets/img/puppy-trim.jpg" decoding="async" width="640" height="480"
+           alt="Puppy having a careful face trim">
       <figcaption>Puppy Trim</figcaption>
     </figure>
 
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/smile-bath.jpg" alt="Bulldog smiling during bath" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+    <figure class="gallery-card">
+      <img src="assets/img/smile-bath.jpg" decoding="async" width="640" height="480"
+           alt="Bulldog smiling in a bubble bath">
       <figcaption>Happy Pup</figcaption>
     </figure>
 
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/yorkie-closeup.jpg" alt="Yorkie with a freshly trimmed face" width="768" height="768" loading="lazy" decoding="async" fetchpriority="low">
+    <figure class="gallery-card">
+      <img src="assets/img/yorkie-closeup.jpg" decoding="async" width="640" height="640"
+           alt="Yorkie face close up after grooming">
       <figcaption>Yorkie Style</figcaption>
     </figure>
 
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/bow-style.jpg" alt="Dog with a pink bow after grooming" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+    <!-- Row 3 -->
+    <figure class="gallery-card">
+      <img src="assets/img/bow-style.jpg" decoding="async" width="640" height="640"
+           alt="Dog with a pink bow after grooming">
       <figcaption>Pretty Pup</figcaption>
     </figure>
 
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/haircut-golden.jpg" alt="Golden retriever getting groomed" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+    <figure class="gallery-card">
+      <img src="assets/img/haircut-golden.jpg" decoding="async" width="640" height="480"
+           alt="Golden dog with freshly shaped coat">
       <figcaption>Golden Cut</figcaption>
     </figure>
 
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/dog-bath.jpg" alt="Dog in warm water bath" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption>Bath &amp; Relax</figcaption>
+    <figure class="gallery-card">
+      <img src="assets/img/nail-trim.jpg" decoding="async" width="640" height="480"
+           alt="Groomer trimming a dog’s nails">
+      <figcaption>Nail Trim</figcaption>
     </figure>
 
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/clipping.jpg" alt="Groomer clipping small dog’s coat" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption>Trim Time</figcaption>
+    <figure class="gallery-card">
+      <img src="assets/img/blowdry.jpg" decoding="async" width="640" height="480"
+           alt="Dog being blow dried after a wash">
+      <figcaption>Blow Dry</figcaption>
     </figure>
 
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/styled-cut.jpg" alt="Perfectly styled haircut for a dog" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption>Styled Look</figcaption>
-    </figure>
-
-    <figure style="background:#f6f8fa;border-radius:10px;padding:.5rem;text-align:center;">
-      <img src="assets/img/fancy-bow.jpg" alt="Dog posing proudly with a yellow bow tie" width="1150" height="768" loading="lazy" decoding="async" fetchpriority="low">
+    <!-- Row 4 -->
+    <figure class="gallery-card">
+      <img src="assets/img/fancy-bow.jpg" decoding="async" width="640" height="480"
+           alt="Dog posing with a yellow bow tie">
       <figcaption>Bowtie Finish</figcaption>
     </figure>
 
-  </div>
+    <figure class="gallery-card">
+      <img src="assets/img/longcoat-groom.jpg" decoding="async" width="640" height="480"
+           alt="Long-coated dog freshly groomed">
+      <figcaption>Gentle Groom</figcaption>
+    </figure>
+
+    <figure class="gallery-card">
+      <img src="assets/img/bath-relax.jpg" decoding="async" width="640" height="480"
+           alt="Dog relaxing at the bath station">
+      <figcaption>Bath &amp; Relax</figcaption>
+    </figure>
+
+    <figure class="gallery-card">
+      <img src="assets/img/trim-time.jpg" decoding="async" width="640" height="480"
+           alt="Finishing touches with scissors">
+      <figcaption>Trim Time</figcaption>
+    </figure>
+
+  </section>
 </main>
+
 
   <!-- ===== FOOTER ===== -->
   <footer class="container" style="margin:2rem 0">
