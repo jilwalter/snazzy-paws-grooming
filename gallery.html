@@ -9,14 +9,14 @@
 <!-- 
   File: gallery.html
   Project: Snazzy Paws Grooming
-  Student Name: Jil Walter
-  Student ID: 5133764
-  Assessment: BIT607 Web Development - Assessment 2
+  Student: Jil Walter (ID: 5133764)
+  Assessment: BIT607 – Assessment 2
   Description: Gallery page showing a 4x4 grid of dog grooming photos.
+  Notes: 4×4 accessible image gallery. All styles are kept in <head> to satisfy HTML validation.
 -->
 
 <style>
-  /* ===== Warm theme (same across site) ===== */
+  /* ===== Warm theme (site-wide) ===== */
   :root{
     --accent:#c49b66;
     --accent-700:#8b6b3f;
@@ -30,7 +30,7 @@
   body{color:var(--ink); background:var(--bg-cream);}
   .container{max-width:1100px;margin:0 auto;padding:0 1rem}
 
-  /* ===== Header (same as other pages) ===== */
+  /* ===== Header (consistent) ===== */
   header{
     width:100%;
     background:linear-gradient(90deg,#8b6b3f 0%,#c49b66 100%);
@@ -45,221 +45,177 @@
   nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.2)}
   nav a[aria-current="page"]{background:rgba(255,255,255,.25);font-weight:700;border-bottom:2px solid #fff}
 
-  /* ===== Gallery grid layout ===== */
+  /* ===== Gallery grid (true 4×4) ===== */
   .gallery-grid{
     display:grid;
-    gap:1rem;
-    padding:1rem 0;
+    grid-template-columns:repeat(4, 1fr);
+    gap:.75rem;
+    padding:1rem;
   }
-  @media(min-width:560px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(min-width:900px){.gallery-grid{grid-template-columns:repeat(4,1fr)}}
+  @media (max-width:900px){ .gallery-grid{grid-template-columns:repeat(2, 1fr);} }
+  @media (max-width:600px){ .gallery-grid{grid-template-columns:1fr;} }
 
-  /* each image tile */
-  figure{
-    background:#fff;
+  /* Card */
+  figure.gallery-card{
+    background:#f6f0e6;
     border:1px solid var(--line);
     border-radius:12px;
-    padding:.5rem;
+    padding:.6rem;
     text-align:center;
-    transition: transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 0 0 1px var(--line);
+    transition:transform .15s ease, box-shadow .15s ease;
   }
-
-  /* small hover effect */
-  figure:hover,figure:focus-within{
-    transform: translateY(-2px);
+  figure.gallery-card:hover, figure.gallery-card:focus-within{
+    transform:translateY(-2px);
     box-shadow:0 6px 14px rgba(0,0,0,.08);
   }
 
-  figure img{
-    width:100%;
-    height:auto;
-    aspect-ratio:4/3;              /* keeps layout even before loading */
-    object-fit:cover;
-    border-radius:8px;
+  .gallery-card img{
     display:block;
+    width:100%;
+    aspect-ratio:1/1;          /* square thumbs for a tidy grid */
+    object-fit:cover;
+    border-radius:10px;
+    background:#fff;
   }
 
-  figcaption{
-    color:var(--muted);
+  .gallery-card figcaption{
+    margin:.5rem 0 .2rem;
+    font-weight:600;
+    color:var(--ink);
     font-size:.95rem;
-    margin-top:.35rem;
+  }
+  .gallery-card p{
+    color:var(--muted);
+    font-size:.85rem;
+    margin:0;
   }
 </style>
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header>
-    <div class="container">
-      <h1>Snazzy Paws Grooming</h1>
-      <!-- main navigation -->
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="gallery.html" aria-current="page">Gallery</a>
-        <a href="booking.html">Booking</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="container">
+    <h1>Snazzy Paws Grooming</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html" aria-current="page">Gallery</a>
+      <a href="booking.html">Booking</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- ===== MAIN CONTENT ===== -->
 <main class="container" id="content">
   <h2 style="text-align:center;margin:1rem 0 .25rem">Gallery</h2>
   <p style="text-align:center;margin:0 0 1rem;">A look at our happy, freshly groomed pups!</p>
 
-  <style>
-    /* True 4×4 grid with larger, fuller images */
-    .gallery-grid{
-      display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      gap:0.75rem;
-      padding:1rem;
-    }
-    @media (max-width:900px){ .gallery-grid{grid-template-columns:repeat(2, 1fr);} }
-    @media (max-width:600px){ .gallery-grid{grid-template-columns:1fr;} }
-
-    figure.gallery-card{
-      background:#f6f0e6;
-      border:1px solid #e6dfd2;
-      border-radius:12px;
-      padding:.6rem;
-      text-align:center;
-      box-shadow:0 0 0 1px #e6dfd2;
-    }
-
-    .gallery-card img{
-      display:block;
-      width:100%;
-      aspect-ratio:1/1;
-      object-fit:cover;
-      border-radius:10px;
-      background:#fff;
-    }
-
-    .gallery-card figcaption{
-      margin:.5rem 0 .2rem;
-      font-weight:600;
-      color:#3a3024;
-      font-size:.95rem;
-    }
-
-    .gallery-card p{
-      color:#5c4e3c;
-      font-size:.85rem;
-      margin:0;
-    }
-  </style>
-
   <section class="gallery-grid" aria-label="Grooming gallery">
-
     <!-- Row 1 -->
     <figure class="gallery-card">
-      <img src="assets/img/dog-bath.jpg" alt="Dog being bathed gently in the grooming tub">
+      <img src="assets/img/dog-bath.jpg" alt="Dog being bathed gently in the grooming tub" loading="lazy" decoding="async">
       <figcaption>Bath Time</figcaption>
       <p>Warm water and pet-safe shampoo for a clean, soft coat.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/dog-shower.jpg" alt="Small dog being rinsed under a shower">
+      <img src="assets/img/dog-shower.jpg" alt="Small dog being rinsed under a shower" loading="lazy" decoding="async">
       <figcaption>Rinse &amp; Shine</figcaption>
       <p>Quick rinse to remove shampoo and freshen up the coat.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/smile-bath.jpg" alt="Happy bulldog smiling during bath time">
+      <img src="assets/img/smile-bath.jpg" alt="Happy bulldog smiling during bath time" loading="lazy" decoding="async">
       <figcaption>Happy Pup</figcaption>
       <p>Every dog leaves the salon feeling fresh and cheerful.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/clipping.jpg" alt="Groomer clipping a small dog's fur">
+      <img src="assets/img/clipping.jpg" alt="Groomer clipping a small dog's fur" loading="lazy" decoding="async">
       <figcaption>Coat Trim</figcaption>
       <p>Precise clipping to keep coats neat and tidy.</p>
     </figure>
 
     <!-- Row 2 -->
     <figure class="gallery-card">
-      <img src="assets/img/haircut-golden.jpg" alt="Golden retriever getting a trim">
+      <img src="assets/img/haircut-golden.jpg" alt="Golden retriever getting a trim" loading="lazy" decoding="async">
       <figcaption>Golden Cut</figcaption>
       <p>Soft trimming and styling for medium-coated breeds.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/puppy-trim.jpg" alt="White puppy getting a gentle face trim">
+      <img src="assets/img/puppy-trim.jpg" alt="White puppy getting a gentle face trim" loading="lazy" decoding="async">
       <figcaption>Puppy Trim</figcaption>
       <p>Gentle introduction to grooming for young pups.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/yorkie-closeup.jpg" alt="Yorkie with freshly groomed face">
+      <img src="assets/img/yorkie-closeup.jpg" alt="Yorkie with freshly groomed face" loading="lazy" decoding="async">
       <figcaption>Yorkie Style</figcaption>
       <p>Stylish face trim and ear detail for small breeds.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/bow-style.jpg" alt="Dog with a pink bow after grooming">
+      <img src="assets/img/bow-style.jpg" alt="Dog with a pink bow after grooming" loading="lazy" decoding="async">
       <figcaption>Pretty Pup</figcaption>
       <p>Finishing touches with cute accessories and bows.</p>
     </figure>
 
     <!-- Row 3 -->
     <figure class="gallery-card">
-      <img src="assets/img/brushing.jpg" alt="Spaniel being brushed on grooming table">
+      <img src="assets/img/brushing.jpg" alt="Spaniel being brushed on grooming table" loading="lazy" decoding="async">
       <figcaption>Brushing Session</figcaption>
       <p>Detangling and brushing for a smooth, shiny coat.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/longcoat-groom.jpg" alt="Long-coated dog freshly styled">
+      <img src="assets/img/longcoat-groom.jpg" alt="Long-coated dog freshly styled" loading="lazy" decoding="async">
       <figcaption>Gentle Groom</figcaption>
       <p>Full groom for long-haired dogs needing extra care.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/nail-trim.jpg" alt="Groomer trimming a dog's nails">
+      <img src="assets/img/nail-trim.jpg" alt="Groomer trimming a dog's nails" loading="lazy" decoding="async">
       <figcaption>Nail Trim</figcaption>
       <p>Quick and painless trims to keep paws healthy.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/fancy-bow.jpg" alt="Dog wearing yellow bow tie">
+      <img src="assets/img/fancy-bow.jpg" alt="Dog wearing yellow bow tie" loading="lazy" decoding="async">
       <figcaption>Bowtie Finish</figcaption>
       <p>A polished look for your pet’s final photo moment.</p>
     </figure>
 
     <!-- Row 4 -->
     <figure class="gallery-card">
-      <img src="assets/img/shaved-style.jpg" alt="Dog with a summer shave cut">
+      <img src="assets/img/shaved-style.jpg" alt="Dog with a summer shave cut" loading="lazy" decoding="async">
       <figcaption>Summer Style</figcaption>
       <p>Short, cool cuts to keep dogs comfy in warmer months.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/spray-dry.jpg" alt="Groomer finishing with a spray dryer">
+      <img src="assets/img/spray-dry.jpg" alt="Groomer finishing with a spray dryer" loading="lazy" decoding="async">
       <figcaption>Spray &amp; Dry</figcaption>
       <p>Soft blow dry and conditioning mist to finish the groom.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/pomeranian-comb.jpg" alt="Fluffy pomeranian being combed carefully">
+      <img src="assets/img/pomeranian-comb.jpg" alt="Fluffy pomeranian being combed carefully" loading="lazy" decoding="async">
       <figcaption>Combing Time</figcaption>
       <p>De-shedding session to remove loose undercoat.</p>
     </figure>
 
     <figure class="gallery-card">
-      <img src="assets/img/terrier-portrait.jpg" alt="Terrier posing proudly after grooming">
+      <img src="assets/img/terrier-portrait.jpg" alt="Terrier posing proudly after grooming" loading="lazy" decoding="async">
       <figcaption>Trim &amp; Pose</figcaption>
       <p>Fresh trim with a proud new look to show off.</p>
     </figure>
-
   </section>
 </main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="container" style="margin:2rem 0">
-    <p>© Snazzy Paws Grooming • Hamilton • Open Mon–Sat, 9am–5pm</p>
-  </footer>
-
+<footer class="container" style="margin:2rem 0">
+  <p>© Snazzy Paws Grooming • Hamilton • Open Mon–Sat, 9am–5pm</p>
+</footer>
 </body>
 </html>
