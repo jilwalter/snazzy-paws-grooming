@@ -1,40 +1,86 @@
 <!doctype html>
 <html lang="en">
-
-<style>
-/* Warm, bolder site header */
-header{
-  background:#8b6b3f;      /* deep warm header */
-  color:#fff;
-  border-bottom:2px solid #c49b66; /* subtle brand line */
-}
-header h1{ color:#fff; margin:0.5rem 0; }
-header nav a{
-  color:#fff;
-  text-decoration:none;
-  padding:.5rem .6rem;
-  border-radius:.4rem;
-}
-header nav a:hover,
-header nav a:focus-visible{
-  background:#7c6036;      /* slightly darker hover */
-  outline:none;
-}
-header nav a[aria-current="page"]{
-  box-shadow:inset 0 -3px 0 #c49b66; /* active underline */
-  font-weight:700;
-}
-</style>
-
-
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Services • Snazzy Paws Grooming</title>
 <link rel="stylesheet" href="assets/css/styles.min.css">
+
+<style>
+/* ===== Warm theme variables (same as Home) ===== */
+:root{
+  --accent:#c49b66;      /* warm tan */
+  --accent-700:#8b6b3f;  /* brown-gold (hover/focus) */
+  --bg-cream:#faf8f4;    /* soft page bg */
+  --panel:#f5eee3;       /* warm panel/tint */
+  --ink:#3a3024;         /* main text */
+  --muted:#5c4e3c;       /* paragraphs/captions */
+  --line:#e6dfd2;        /* light borders */
+}
+
+/* Page basics */
+body{color:var(--ink); background:var(--bg-cream);}
+.container{max-width:1100px;margin:0 auto;padding:0 1rem}
+
+/* ===== Warm Gradient Header (Option 2) ===== */
+header{
+  background: linear-gradient(90deg, #8b6b3f 0%, #c49b66 100%);
+  color:#fff;
+  border-bottom:3px solid #8b6b3f;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+header h1{ margin:.6rem 0; color:#fff; font-size:1.6rem; letter-spacing:.5px; }
+nav{ display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:.6rem; }
+nav a{
+  color:#fff; text-decoration:none; padding:.45rem .7rem; border-radius:.4rem; font-weight:500;
+  transition:background .2s ease, color .2s ease;
+}
+nav a:hover, nav a:focus-visible{ background:rgba(255,255,255,.2); outline:none; }
+nav a[aria-current="page"]{ background:rgba(255,255,255,.25); font-weight:700; border-bottom:2px solid #fff; }
+
+/* Utility */
+h2,h3{margin-top:1.25rem}
+.lead{color:var(--muted); font-size:1.05rem; line-height:1.6}
+
+/* Summary cards */
+.cards{display:grid; gap:1rem; margin:1rem 0 1.25rem}
+@media(min-width:640px){ .cards{ grid-template-columns:repeat(3,1fr); } }
+.card{
+  background:#fff; border:1px solid var(--line); border-radius:12px; padding:1rem;
+  display:flex; gap:.75rem; align-items:flex-start; text-decoration:none; color:inherit;
+}
+.card .emoji{ font-size:1.4rem; line-height:1 }
+.card h3{ margin:.1rem 0 .35rem; font-size:1.05rem; color:var(--ink) }
+.card p{ margin:0; color:var(--muted) }
+.card:hover, .card:focus-visible{ outline:2px solid var(--accent); outline-offset:2px }
+
+/* Pricing table */
+table{ width:100%; border-collapse:collapse; margin:1rem 0; background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden }
+thead th{
+  background:#f6f0e6; color:var(--ink); text-align:left; border-bottom:1px solid var(--line);
+  padding:.7rem .6rem; font-weight:700;
+}
+tbody th[scope="row"]{ text-align:left; padding:.65rem .6rem; border-top:1px solid var(--line); }
+tbody td{ padding:.65rem .6rem; border-top:1px solid var(--line); color:var(--muted) }
+tbody tr:nth-child(even){ background:#faf8f4 }
+td:nth-child(2){ text-align:right; white-space:nowrap } /* prices right-aligned */
+
+/* Panels / notes */
+.panel{
+  background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:1rem; margin:1.25rem 0;
+}
+
+/* CTA button */
+.btn{
+  display:inline-block; background:var(--accent); color:#fff; text-decoration:none;
+  padding:.7rem 1rem; border-radius:.7rem; font-weight:700;
+}
+.btn:hover,.btn:focus-visible{ background:var(--accent-700); }
+</style>
 </head>
+
 <body>
-<header>
+<header class="container">
   <h1>Snazzy Paws Grooming</h1>
   <nav>
     <a href="index.html">Home</a>
@@ -45,35 +91,86 @@ header nav a[aria-current="page"]{
   </nav>
 </header>
 
-<main>
-  <h2>Services & Prices</h2>
-  <p>Transparent pricing so you can choose the right groom for your dog.</p>
+<main class="container" id="content">
+  <h2>Services &amp; Prices</h2>
+  <p class="lead">Clear, simple pricing so you can choose the right groom for your dog.</p>
 
+  <!-- At a glance -->
+  <div class="cards" aria-label="Popular services at a glance">
+    <a class="card" href="#prices">
+      <span class="emoji" aria-hidden="true">🛁</span>
+      <div>
+        <h3>Bath &amp; blow dry</h3>
+        <p>Clean, soft coat with a gentle shampoo and full dry.</p>
+      </div>
+    </a>
+    <a class="card" href="#prices">
+      <span class="emoji" aria-hidden="true">✂️</span>
+      <div>
+        <h3>Full groom</h3>
+        <p>Clip or scissor style to suit your dog’s breed and lifestyle.</p>
+      </div>
+    </a>
+    <a class="card" href="#prices">
+      <span class="emoji" aria-hidden="true">🐾</span>
+      <div>
+        <h3>Nail trim</h3>
+        <p>Quick, low-stress paw tidy to keep nails comfortable.</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- Prices (meets assessment requirement) -->
+  <h3 id="prices">Prices</h3>
   <table>
     <thead>
-      <tr><th>Service</th><th>Price</th><th>What’s included</th></tr>
+      <tr>
+        <th scope="col">Service</th>
+        <th scope="col">Price</th>
+        <th scope="col">What’s included</th>
+      </tr>
     </thead>
     <tbody>
-      <tr><th scope="row">Bath & brush</th><td>$25–$50</td><td>Shampoo, blow-dry, brush-out, nail trim</td></tr>
-      <tr><th scope="row">Haircut</th><td>$45–$85</td><td>Bath, blow-dry, breed/custom haircut, nail trim</td></tr>
+      <tr><th scope="row">Bath &amp; brush</th><td>From $25–$50</td><td>Shampoo, blow-dry, brush-out, nail check</td></tr>
+      <tr><th scope="row">Haircut</th><td>From $45–$85</td><td>Bath, blow-dry, breed/custom haircut, nail check</td></tr>
       <tr><th scope="row">Nail trim</th><td>$10–$20</td><td>Trim and optional filing</td></tr>
       <tr><th scope="row">Ear cleaning</th><td>$10–$15</td><td>Gentle wax/debris removal</td></tr>
       <tr><th scope="row">Teeth brushing</th><td>$10–$15</td><td>Pet-safe toothpaste</td></tr>
-      <tr><th scope="row">De-shedding (add-on)</th><td>+$20–$40</td><td>Undercoat removal (add to bath/haircut)</td></tr>
-      <tr><th scope="row">Flea & tick treatment</th><td>$15–$30</td><td>Shampoo + preventative</td></tr>
-      <tr><th scope="row">Spa package</th><td>$75–$150</td><td>Bath, haircut, teeth, nails, optional scents</td></tr>
-      <tr><th scope="row">Express service (add-on)</th><td>+$15–$25</td><td>Quick touch-up</td></tr>
-      <tr><th scope="row">Medicated bath (add-on)</th><td>+$20–$40</td><td>For sensitive skin</td></tr>
+      <tr><th scope="row">De-shedding (add-on)</th><td>+ $20–$40</td><td>Undercoat removal (add to bath/haircut)</td></tr>
+      <tr><th scope="row">Flea &amp; tick treatment</th><td>$15–$30</td><td>Shampoo + preventative</td></tr>
+      <tr><th scope="row">Spa package</th><td>$75–$150</td><td>Bath, haircut, teeth, nails; light fragrance optional</td></tr>
+      <tr><th scope="row">Express service (add-on)</th><td>+ $15–$25</td><td>Quick touch-up between grooms</td></tr>
+      <tr><th scope="row">Medicated bath (add-on)</th><td>+ $20–$40</td><td>For sensitive or irritated skin</td></tr>
       <tr><th scope="row">Special-breed cuts</th><td>Quote</td><td>Breed-specific styling</td></tr>
-      <tr><th scope="row">Puppy package</th><td>$30–$60</td><td>Intro grooming for puppies</td></tr>
-      <tr><th scope="row">Senior dog package</th><td>$40–$80</td><td>Gentle handling for seniors</td></tr>
+      <tr><th scope="row">Puppy package</th><td>$30–$60</td><td>Gentle intro groom for puppies</td></tr>
+      <tr><th scope="row">Senior dog package</th><td>$40–$80</td><td>Calm handling and comfort care</td></tr>
       <tr><th scope="row">Full grooming package</th><td>$60–$120</td><td>Bath, haircut, teeth, nails, ears</td></tr>
     </tbody>
   </table>
 
-  <p><a href="booking.html">Book now</a></p>
+  <!-- What’s included -->
+  <div class="panel" aria-label="What’s included">
+    <strong>What’s included:</strong>
+    <ul style="margin:.5rem 0 0 1.1rem; line-height:1.5">
+      <li>Shampoo &amp; conditioner, blow dry and brush-out</li>
+      <li>Ear clean and nail check (trims available)</li>
+      <li>Optional light fragrance if approved by you</li>
+    </ul>
+  </div>
+
+  <!-- Note -->
+  <p class="lead" style="margin-top:.5rem">
+    Heavily matted coats or special handling may have an added fee after a quick consultation.
+  </p>
+
+  <!-- CTA -->
+  <p style="margin:1.25rem 0 2rem">
+    <a class="btn" href="booking.html">Book an appointment</a>
+  </p>
 </main>
 
-<footer><p>Open Mon–Sat, 9am–5pm</p></footer>
+<footer class="container" role="contentinfo" style="margin:2rem 0">
+  <p>© Snazzy Paws Grooming • Hamilton • Open Mon–Sat, 9am–5pm</p>
+</footer>
 </body>
 </html>
