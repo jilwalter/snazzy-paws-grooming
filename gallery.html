@@ -5,76 +5,125 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Gallery • Snazzy Paws Grooming</title>
 <link rel="stylesheet" href="assets/css/styles.min.css">
+
+<!-- 
+  File: gallery.html
+  Project: Snazzy Paws Grooming
+  Student Name: Jil Walter
+  Student ID: 5133764
+  Assessment: BIT607 Web Development - Assessment 2
+  Description: Gallery page showing a 4x4 grid of dog grooming photos.
+-->
+
 <style>
-:root{
-  --accent:#c49b66; --accent-700:#8b6b3f; --bg-cream:#faf8f4; --panel:#f5eee3;
-  --ink:#3a3024; --muted:#5c4e3c; --line:#e6dfd2;
-}
-body{color:var(--ink); background:var(--bg-cream);}
-.container{max-width:1100px;margin:0 auto;padding:0 1rem}
+  /* ===== Warm theme (same colours used site-wide) ===== */
+  :root{
+    --accent:#c49b66;
+    --accent-700:#8b6b3f;
+    --bg-cream:#faf8f4;
+    --panel:#f5eee3;
+    --ink:#3a3024;
+    --muted:#5c4e3c;
+    --line:#e6dfd2;
+  }
 
-/* Full-width gradient header */
-header{width:100%;background:linear-gradient(90deg,#8b6b3f 0%,#c49b66 100%);color:#fff;
-  border-bottom:3px solid #8b6b3f;box-shadow:0 2px 6px rgba(0,0,0,.1)}
-header .container{max-width:1100px;margin:0 auto;padding:0 1rem}
-header h1{margin:.6rem 0;color:#fff;font-size:1.6rem;letter-spacing:.5px}
-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.6rem}
-nav a{color:#fff;text-decoration:none;padding:.45rem .7rem;border-radius:.4rem;font-weight:500}
-nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.2)}
-nav a[aria-current="page"]{background:rgba(255,255,255,.25);font-weight:700;border-bottom:2px solid #fff}
+  body{color:var(--ink); background:var(--bg-cream);}
+  .container{max-width:1100px;margin:0 auto;padding:0 1rem}
 
-/* Gallery grid (4 columns desktop, 2 tablet, 1 phone) */
-.gallery-grid{display:grid;gap:1rem;padding:1rem 0}
-@media(min-width:560px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:900px){.gallery-grid{grid-template-columns:repeat(4,1fr)}}
-figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.5rem;text-align:center}
-figure img{width:100%;height:200px;object-fit:cover;border-radius:8px;display:block}
-figcaption{color:var(--muted);font-size:.95rem;margin-top:.35rem}
+  /* ===== Full-width gradient header (same on all pages) ===== */
+  header{
+    width:100%;
+    background:linear-gradient(90deg,#8b6b3f 0%,#c49b66 100%);
+    color:#fff;
+    border-bottom:3px solid #8b6b3f;
+    box-shadow:0 2px 6px rgba(0,0,0,.1);
+  }
+  header .container{max-width:1100px;margin:0 auto;padding:0 1rem}
+  header h1{margin:.6rem 0;color:#fff;font-size:1.6rem;letter-spacing:.5px}
+  nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.6rem}
+  nav a{color:#fff;text-decoration:none;padding:.45rem .7rem;border-radius:.4rem;font-weight:500}
+  nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.2)}
+  nav a[aria-current="page"]{background:rgba(255,255,255,.25);font-weight:700;border-bottom:2px solid #fff}
+
+  /* ===== Gallery layout ===== */
+  .gallery-grid{
+    display:grid;
+    gap:1rem;
+    padding:1rem 0;
+  }
+  @media(min-width:560px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:900px){.gallery-grid{grid-template-columns:repeat(4,1fr)}}
+
+  figure{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:.5rem;
+    text-align:center;
+  }
+  figure img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:8px;
+    display:block;
+  }
+  figcaption{
+    color:var(--muted);
+    font-size:.95rem;
+    margin-top:.35rem;
+  }
 </style>
 </head>
 <body>
-<header>
-  <div class="container">
-    <h1>Snazzy Paws Grooming</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="gallery.html" aria-current="page">Gallery</a>
-      <a href="booking.html">Booking</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
 
-<main class="container">
-  <h2 style="margin-top:1.25rem">Gallery</h2>
-  <p class="lead" style="color:var(--muted)">A look at our happy, freshly groomed pups.</p>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="container">
+      <h1>Snazzy Paws Grooming</h1>
+      <!-- site navigation (same links as other pages) -->
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+        <a href="booking.html">Booking</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="gallery-grid">
-    <!-- keep your 16 figures (examples below) -->
-    <figure><img src="assets/img/nail-trim.jpg" alt="Groomer trimming a small dog’s nails"><figcaption>Nail Trim</figcaption></figure>
-    <figure><img src="assets/img/haircut-golden.jpg" alt="Groomer styling a golden retriever’s coat"><figcaption>Gentle Groom</figcaption></figure>
-    <figure><img src="assets/img/dog-bath.jpg" alt="Dog enjoying a bath at the salon"><figcaption>Bath Time</figcaption></figure>
-    <figure><img src="assets/img/dog-shower.jpg" alt="Dog being rinsed with water"><figcaption>Rinse &amp; Shine</figcaption></figure>
-    <figure><img src="assets/img/clipping.jpg" alt="Groomer using clippers on a Yorkie"><figcaption>Coat Trim</figcaption></figure>
-    <figure><img src="assets/img/styled-cut.jpg" alt="Freshly groomed dog posing on the table"><figcaption>Styled Cut</figcaption></figure>
-    <figure><img src="assets/img/spray-dry.jpg" alt="Groomer spraying coat to finish"><figcaption>Finishing Touch</figcaption></figure>
-    <figure><img src="assets/img/puppy-trim.jpg" alt="Puppy getting a careful face trim"><figcaption>Puppy Trim</figcaption></figure>
-    <figure><img src="assets/img/bow-style.jpg" alt="Dog with a pink bow after grooming"><figcaption>Pretty Pup</figcaption></figure>
-    <figure><img src="assets/img/brushing.jpg" alt="Groomer brushing a spaniel’s fur"><figcaption>Brushing Session</figcaption></figure>
-    <figure><img src="assets/img/shaved-style.jpg" alt="Chinese Crested with a neat summer trim"><figcaption>Summer Cut</figcaption></figure>
-    <figure><img src="assets/img/blowdry.jpg" alt="Dog being blow-dried after a wash"><figcaption>Blow Dry</figcaption></figure>
-    <figure><img src="assets/img/smile-bath.jpg" alt="Bulldog smiling during bath"><figcaption>Happy Pup</figcaption></figure>
-    <figure><img src="assets/img/pomeranian-comb.jpg" alt="Groomer combing a fluffy white dog"><figcaption>Combing Time</figcaption></figure>
-    <figure><img src="assets/img/yorkie-closeup.jpg" alt="Yorkie with a freshly trimmed face"><figcaption>Yorkie Style</figcaption></figure>
-    <figure><img src="assets/img/fancy-bow.jpg" alt="Dog posing proudly with a yellow bow tie"><figcaption>Bowtie Finish</figcaption></figure>
-  </div>
-</main>
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="container">
+    <!-- page title and intro -->
+    <h2 style="margin-top:1.25rem">Gallery</h2>
+    <p class="lead" style="color:var(--muted)">A look at our happy, freshly groomed pups.</p>
 
-<footer class="container" style="margin:2rem 0">
-  <p>© Snazzy Paws Grooming • Hamilton • Open Mon–Sat, 9am–5pm</p>
-</footer>
+    <!-- 4x4 image grid -->
+    <div class="gallery-grid">
+      <!-- Each figure holds an image and short caption -->
+      <figure><img src="assets/img/nail-trim.jpg" alt="Groomer trimming a small dog’s nails"><figcaption>Nail Trim</figcaption></figure>
+      <figure><img src="assets/img/haircut-golden.jpg" alt="Groomer styling a golden retriever’s coat"><figcaption>Gentle Groom</figcaption></figure>
+      <figure><img src="assets/img/dog-bath.jpg" alt="Dog enjoying a bath at the salon"><figcaption>Bath Time</figcaption></figure>
+      <figure><img src="assets/img/dog-shower.jpg" alt="Dog being rinsed with water"><figcaption>Rinse &amp; Shine</figcaption></figure>
+      <figure><img src="assets/img/clipping.jpg" alt="Groomer using clippers on a Yorkie"><figcaption>Coat Trim</figcaption></figure>
+      <figure><img src="assets/img/styled-cut.jpg" alt="Freshly groomed dog posing on the table"><figcaption>Styled Cut</figcaption></figure>
+      <figure><img src="assets/img/spray-dry.jpg" alt="Groomer spraying coat to finish"><figcaption>Finishing Touch</figcaption></figure>
+      <figure><img src="assets/img/puppy-trim.jpg" alt="Puppy getting a careful face trim"><figcaption>Puppy Trim</figcaption></figure>
+      <figure><img src="assets/img/bow-style.jpg" alt="Dog with a pink bow after grooming"><figcaption>Pretty Pup</figcaption></figure>
+      <figure><img src="assets/img/brushing.jpg" alt="Groomer brushing a spaniel’s fur"><figcaption>Brushing Session</figcaption></figure>
+      <figure><img src="assets/img/shaved-style.jpg" alt="Chinese Crested with a neat summer trim"><figcaption>Summer Cut</figcaption></figure>
+      <figure><img src="assets/img/blowdry.jpg" alt="Dog being blow-dried after a wash"><figcaption>Blow Dry</figcaption></figure>
+      <figure><img src="assets/img/smile-bath.jpg" alt="Bulldog smiling during bath"><figcaption>Happy Pup</figcaption></figure>
+      <figure><img src="assets/img/pomeranian-comb.jpg" alt="Groomer combing a fluffy white dog"><figcaption>Combing Time</figcaption></figure>
+      <figure><img src="assets/img/yorkie-closeup.jpg" alt="Yorkie with a freshly trimmed face"><figcaption>Yorkie Style</figcaption></figure>
+      <figure><img src="assets/img/fancy-bow.jpg" alt="Dog posing proudly with a yellow bow tie"><figcaption>Bowtie Finish</figcaption></figure>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="container" style="margin:2rem 0">
+    <p>© Snazzy Paws Grooming • Hamilton • Open Mon–Sat, 9am–5pm</p>
+  </footer>
+
 </body>
 </html>
-
-
