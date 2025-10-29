@@ -1,7 +1,52 @@
-:root{--primary:#0B6E4F;--accent:#FF6B35;--text:#222;--bg:#fff}
-body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);margin:0;padding:0}
-header,footer{background:#f4f6f8;padding:1rem;text-align:center}
-nav a{margin:0 .5rem;color:var(--primary);text-decoration:none}
+/* 
+  File: styles.min.css
+  Project: Snazzy Paws Grooming
+  Student Name: Jil Walter
+  Student ID: 5133764
+  Assessment: BIT607 Web Development - Assessment 2
+  Description: Basic site-wide styles (fonts, colours and layout defaults).
+  Note: Main custom page styles are written inside each HTML file.
+*/
+
+/* main colour variables used across the site */
+:root{
+  --primary:#0B6E4F;  /* old default green, kept for base nav links */
+  --accent:#FF6B35;   /* accent orange, used in headings */
+  --text:#222;        /* main text colour */
+  --bg:#fff;          /* page background */
+}
+
+/* basic body setup */
+body{
+  font-family:Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  margin:0;
+  padding:0;
+}
+
+/* simple header and footer styling */
+header,footer{
+  background:#f4f6f8;
+  padding:1rem;
+  text-align:center;
+}
+
+/* default link/nav look */
+nav a{
+  margin:0 .5rem;
+  color:var(--primary);
+  text-decoration:none;
+}
+
+/* underline on hover for clarity */
 a:hover{text-decoration:underline}
+
+/* heading accent colour */
 h1{color:var(--accent)}
-:focus-visible{outline:3px solid #000;outline-offset:3px}
+
+/* visible focus outline for accessibility */
+:focus-visible{
+  outline:3px solid #000;
+  outline-offset:3px;
+}
