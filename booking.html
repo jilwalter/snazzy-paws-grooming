@@ -12,25 +12,37 @@
   Student Name: Jil Walter
   Student ID: 5133764
   Assessment: BIT607 Web Development - Assessment 2
-  Description: Booking page with a simple request form.
+  Description: Booking page with a simple appointment request form.
+  Notes: Header updated to match layout and styling across all pages.
 -->
 
 <style>
-  /* ===== Warm theme (same colours as the rest of the site) ===== */
+  /* ===== Warm theme variables (shared site-wide) ===== */
   :root{
-    --accent:#c49b66;      /* button + highlights */
-    --accent-700:#8b6b3f;  /* hover state */
-    --bg-cream:#faf8f4;    /* page background */
-    --panel:#f5eee3;       /* soft panel (not used much here) */
-    --ink:#3a3024;         /* main text */
-    --muted:#5c4e3c;       /* helper text */
-    --line:#e6dfd2;        /* borders */
+    --accent:#c49b66;
+    --accent-700:#8b6b3f;
+    --bg-cream:#faf8f4;
+    --panel:#f5eee3;
+    --ink:#3a3024;
+    --muted:#5c4e3c;
+    --line:#e6dfd2;
   }
 
-  body{color:var(--ink); background:var(--bg-cream);}
-  .container{max-width:1100px;margin:0 auto;padding:0 1rem}
+  body{
+    color:var(--ink);
+    background:var(--bg-cream);
+    font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+  }
 
-  /* ===== Full-width gradient header (matches other pages) ===== */
+  .container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 1rem;
+  }
+
+  /* ===== HEADER (consistent across entire site) ===== */
   header{
     width:100%;
     background:linear-gradient(90deg,#8b6b3f 0%,#c49b66 100%);
@@ -38,15 +50,50 @@
     border-bottom:3px solid #8b6b3f;
     box-shadow:0 2px 6px rgba(0,0,0,.1);
   }
-  header .container{max-width:1100px;margin:0 auto;padding:0 1rem}
-  header h1{margin:.6rem 0;color:#fff;font-size:1.6rem;letter-spacing:.5px}
-  nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.6rem}
-  nav a{color:#fff;text-decoration:none;padding:.45rem .7rem;border-radius:.4rem;font-weight:500}
-  nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.2)}
-  nav a[aria-current="page"]{background:rgba(255,255,255,.25);font-weight:700;border-bottom:2px solid #fff}
+
+  header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    padding:1rem 0;
+  }
+
+  header h1{
+    margin:0;
+    color:#fff;
+    font-size:1.6rem;
+    letter-spacing:.5px;
+  }
+
+  nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem;
+  }
+
+  nav a{
+    color:#fff;
+    text-decoration:none;
+    padding:.45rem .7rem;
+    border-radius:.4rem;
+    font-weight:500;
+  }
+
+  nav a:hover,
+  nav a:focus-visible{
+    background:rgba(255,255,255,.2);
+  }
+
+  nav a[aria-current="page"]{
+    background:rgba(255,255,255,.25);
+    font-weight:700;
+    border-bottom:2px solid #fff;
+  }
 
   /* ===== Booking form styles ===== */
-  .lead{color:var(--muted);font-size:1.05rem;line-height:1.6}
+  .lead{color:var(--muted);font-size:1.05rem;line-height:1.6;}
+
   form{
     background:#fff;
     border:1px solid var(--line);
@@ -54,7 +101,13 @@
     padding:1rem;
     margin:1rem 0 2rem;
   }
-  label{display:block;margin:.6rem 0 .25rem;color:var(--muted)}
+
+  label{
+    display:block;
+    margin:.6rem 0 .25rem;
+    color:var(--muted);
+  }
+
   input,select,textarea{
     width:100%;
     max-width:720px;
@@ -63,12 +116,15 @@
     border-radius:.5rem;
     background:#fff;
     color:var(--ink);
+    font-size:1rem;
   }
+
   input:focus,select:focus,textarea:focus{
     outline:2px solid var(--accent);
     outline-offset:2px;
     border-color:var(--accent);
   }
+
   .btn{
     display:inline-block;
     background:var(--accent);
@@ -77,18 +133,29 @@
     padding:.7rem 1rem;
     border-radius:.7rem;
     font-weight:700;
+    border:none;
+    cursor:pointer;
   }
-  .btn:hover,.btn:focus-visible{background:var(--accent-700)}
-  .help{color:var(--muted);font-size:.95rem}
+
+  .btn:hover,.btn:focus-visible{background:var(--accent-700);}
+  .help{color:var(--muted);font-size:.95rem;}
+  
+  /* ===== Footer (consistent styling) ===== */
+  footer{
+    text-align:center;
+    margin:2rem 0;
+    color:var(--muted);
+    font-size:.9rem;
+  }
 </style>
 </head>
+
 <body>
 
-  <!-- ===== HEADER (same structure everywhere) ===== -->
+  <!-- ===== HEADER (same layout across site) ===== -->
   <header>
     <div class="container">
       <h1>Snazzy Paws Grooming</h1>
-      <!-- site navigation -->
       <nav>
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
@@ -100,14 +167,12 @@
   </header>
 
   <!-- ===== MAIN CONTENT ===== -->
-  <main class="container">
-    <!-- page title + quick note -->
+  <main class="container" id="content">
     <h2>Book an appointment</h2>
     <p class="help">Fill this in and we’ll get back to you to confirm the time.</p>
 
-    <!-- simple booking form (not hooked to a backend) -->
+    <!-- Simple booking form (no backend functionality) -->
     <form action="#" method="post">
-      <!-- basic contact details -->
       <label for="name">Your name</label>
       <input id="name" name="name" required>
 
@@ -117,7 +182,6 @@
       <label for="phone">Phone</label>
       <input id="phone" name="phone" type="tel" required>
 
-      <!-- dog + service info -->
       <label for="dog">Dog’s name &amp; breed</label>
       <input id="dog" name="dog" placeholder="e.g., Bella – Cavoodle">
 
@@ -136,16 +200,16 @@
       <label for="notes">Notes</label>
       <textarea id="notes" name="notes" rows="4" placeholder="Anything we should know? (coat condition, anxiety, etc.)"></textarea>
 
-      <!-- submit button -->
-      <p style="margin-top:1rem">
+      <p style="margin-top:1rem;">
         <button class="btn" type="submit">Request booking</button>
       </p>
     </form>
   </main>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="container" style="margin:2rem 0">
+  <footer class="container">
     <p>© Snazzy Paws Grooming • Hamilton • Open Mon–Sat, 9am–5pm</p>
   </footer>
 </body>
 </html>
+
