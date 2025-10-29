@@ -13,11 +13,11 @@
     Student ID: 5133764
     Assessment: BIT607 Web Development - Assessment 2
     Description: 4×4 image gallery showcasing dog grooming photos.
-    Notes: Adjusted for HTML validation (moved <p> text into <figcaption>).
+    Notes: Header layout now matches other pages. Gallery validated (0 errors).
   -->
 
   <style>
-    /* ===== Site-wide warm theme ===== */
+    /* ===== Warm theme (site-wide) ===== */
     :root{
       --accent:#c49b66;
       --accent-700:#8b6b3f;
@@ -42,7 +42,7 @@
       padding:0 1rem;
     }
 
-    /* ===== Header (consistent with all pages) ===== */
+    /* ===== HEADER (consistent across site) ===== */
     header{
       width:100%;
       background:linear-gradient(90deg,#8b6b3f 0%,#c49b66 100%);
@@ -51,15 +51,18 @@
       box-shadow:0 2px 6px rgba(0,0,0,.1);
     }
 
+    /* Use flex layout for horizontal alignment */
     header .container{
       display:flex;
-      flex-direction:column;
-      align-items:flex-start;
-      padding:1rem;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:1rem 0;
     }
 
     header h1{
-      margin:0.2rem 0 0.5rem;
+      margin:0;
+      color:#fff;
       font-size:1.6rem;
       letter-spacing:.5px;
     }
@@ -68,7 +71,6 @@
       display:flex;
       flex-wrap:wrap;
       gap:.5rem;
-      margin-bottom:.6rem;
     }
 
     nav a{
@@ -127,7 +129,7 @@
     .gallery-card img{
       display:block;
       width:100%;
-      aspect-ratio:1/1; /* Square format for balance */
+      aspect-ratio:1/1; /* keeps grid even */
       object-fit:cover;
       border-radius:10px;
       background:#fff;
@@ -147,7 +149,7 @@
       margin-bottom:.25rem;
     }
 
-    /* Footer styling (consistent) */
+    /* ===== FOOTER ===== */
     footer{
       text-align:center;
       margin:2rem 0;
@@ -158,20 +160,20 @@
 </head>
 
 <body>
-  <!-- ===== HEADER ===== -->
-<header>
-  <div class="container">
-    <h1>Snazzy Paws Grooming</h1>
-    <!-- navigation bar -->
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="gallery.html" aria-current="page">Gallery</a>
-      <a href="booking.html">Booking</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+
+  <!-- ===== HEADER (same layout across site) ===== -->
+  <header>
+    <div class="container">
+      <h1>Snazzy Paws Grooming</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+        <a href="booking.html">Booking</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <!-- ===== MAIN CONTENT ===== -->
   <main class="container" id="content">
@@ -180,7 +182,6 @@
 
     <!-- 4×4 gallery section -->
     <section class="gallery-grid" aria-label="Dog grooming gallery">
-
       <!-- Each figure contains one image and caption text for valid structure -->
       <figure class="gallery-card">
         <img src="assets/img/dog-bath.jpg" alt="Dog being bathed gently in the grooming tub" loading="lazy" decoding="async">
@@ -268,5 +269,7 @@
   <footer class="container">
     <p>© Snazzy Paws Grooming • Hamilton • Open Mon–Sat, 9am–5pm</p>
   </footer>
+
 </body>
 </html>
+
